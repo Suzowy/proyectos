@@ -34,6 +34,7 @@
   padding: 2rem 1rem;
   text-align: center;
   border-radius: 5px;
+  color: #607b99;
   background-color: #8aafd62a;
   border: 1px solid #607b99;
   box-shadow: 0 1rem 1rem -8px rgba(0, 0, 0, 0.277);
@@ -49,6 +50,7 @@
   margin-top: 1rem;
 }
 .contact-form {
+
   width: 100%;
 }
 .form__container {
@@ -58,17 +60,20 @@
 }
 
 .form__left {
+
   margin-top: 10px;
   flex-basis: 47%;
   margin-right: 1.5rem;
 }
 
 .form__group {
+
   position: relative;
   margin-bottom: 2.5rem;
 }
 
 .form__input {
+  font-family: "yayou";
   position: relative;
   width: 80%;
   height: 20px;
@@ -131,10 +136,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: 1px solid #ccc;
   min-height: 15rem;
   margin-bottom: 3.5rem;
   overflow: hidden;
+  border-radius: 5px;
+  background-color: #8aafd61b;
+  border: 1px solid #607b99;
+  box-shadow: 0 1rem 1rem -8px rgba(0, 0, 0, 0.277);
 }
 
 .iframe {
@@ -166,6 +174,19 @@
 
 
 @media (max-width: 585px) {
+
+  .data {
+    margin-left: -18px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #8aafd62a;
+    border: 1px solid #607b99;
+    box-shadow: 0 1rem 1rem -8px rgba(0, 0, 0, 0.277);
+  }
+
   .form__container {
     width: 90%;
     display: flex; /* Cambiar a disposición en columna */
