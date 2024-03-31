@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Proyectos</h2>
+  <div class="slider">
+    <ul class="galeria">
+      <li *ngFor="let project of projects" class="project">
+        <a [routerLink]="['/proyecto', project._id]">
+          <div class="image">
+            <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img">
+          </div>
+          <h3>{{project.name}}</h3>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container2">
+  <h2 (click)="toggleProjects()"><img src="assets/img/vision.png" alt="icono" class="flecha">Haz click para ver todos
+    los proyectos</h2>
+
+
+  <ul *ngIf="showAllProjects">
+    <li *ngFor="let project of projects" class="project">
+      <a [routerLink]="['/proyecto', project._id]">
+        <div class="image">
+          <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img">
+        </div>
+        <h3>{{project.name}}</h3>
+        <p>{{project.category}}</p>
+        <!-- <p>{{project.http}}</p> -->
+      </a>
+    </li>
+  </ul>
+</div>

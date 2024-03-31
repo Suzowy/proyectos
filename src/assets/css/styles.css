@@ -1,0 +1,292 @@
+@font-face {
+  font-family: "yanone";
+  src: url("fonts/yanone.ttf");
+}
+
+@font-face {
+  font-family: "finger";
+  src: url("fonts/finger.ttf");
+}
+
+/* estilos generales */
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "yanone", Arial, Helvetica;
+  font-size: 20px;
+  background: url("../img/fondo.jpg");
+  /* fondo fijado */
+  background-attachment: fixed;
+}
+
+/* Barra de navegacion/cabecera */
+header {
+  z-index: 999;
+  display: block;
+  width: 100%;
+  height: 88px;
+  justify-content: center;
+  background: #547294eb;
+  position: fixed;
+  text-transform: uppercase;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  justify-content: space-around;
+  display: inline-block;
+  text-align: center;
+  line-height: 88px;
+}
+
+header a {
+  display: block;
+  padding: 0 20px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+header a:hover {
+  transform: scale(1.1);
+}
+
+header a.actived {
+  text-decoration: underline;
+  color: rgb(41, 41, 41);
+  font-weight: 600;
+  transform: scale(1.3);
+}
+
+/* Estilos para el menú hamburguesa en pantallas pequeñas */
+.menu-toggle {
+  display: none;
+  /* Ocultar el botón del menú hamburguesa por defecto */
+}
+
+/* Logotipo */
+.logo {
+  font-family: "finger";
+  font-size: 40px;
+}
+
+.logo a {
+  transition: color 0.5s, transform 0.5s;
+}
+
+.logo a:hover {
+  text-decoration: none;
+  background: transparent;
+  color: rgb(39, 36, 39);
+  transform: scale(1.2, 1.2);
+}
+
+/* Contenedor principal */
+#content {
+  min-height: 600px;
+  height: auto;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0px auto;
+  box-shadow: 0 0 40px black;
+  border-left: 1px solid #b7b7b7;
+  border-right: 1px solid #b7b7b7;
+  background: rgba(255, 255, 255, 0.797);
+  padding-top: 120px;
+  overflow: hidden;
+}
+
+h2 {
+  font-family: "finger";
+  font-size: 30px;
+  color: #686868;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+/* Formularios generales para todas las páginas */
+form {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+form label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea {
+  width: 40%;
+  /* Utiliza el 100% del ancho */
+  padding: 5px;
+}
+
+form button,
+form input[type="submit"] {
+  display: block;
+  font-size: 15px;
+  padding: 10px;
+  margin-top: 15px;
+  color: whitesmoke;
+  background: #8560d8;
+  border: 2px solid #422580;
+  box-shadow: inset 0px 0px 5px 1px #422580;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background: #321b62;
+  border: 2px solid #8560d8;
+  box-shadow: inset 0px 0px 5px 3px #7d58cb;
+  color: whitesmoke;
+}
+
+form input[disabled] {
+  opacity: 0.6;
+}
+
+form input[disabled]:hover {
+  cursor: no-drop;
+}
+
+
+.formError {
+  font-size: 15px;
+  margin-left: 5px;
+  padding: 5px;
+  color: #e63242;
+}
+
+.message {
+  padding: 5px;
+  border: 1px solid #eee;
+  width: 50%;
+  /* Utiliza el 100% del ancho */
+}
+
+.success {
+  color: rgb(51, 181, 51);
+  font-family: "finger";
+  font-size: 15px;
+}
+
+.failed {
+  color: #e63242;
+  font-family: "finger";
+  font-size: 15px;
+}
+
+/* Pie de página */
+footer {
+  width: 75%;
+  margin: 0px auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: rgba(0, 0, 0, 0.775);
+}
+
+/* Media queries para hacer responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    width: 68px;
+    height: 68px;
+    border-radius: 100px;
+    display: block;
+    margin-left: 26px;
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: white;
+    cursor: pointer;
+    font-family: "finger";
+    text-transform: uppercase;
+    background-color: #905570;
+    border:1px solid #ccc;
+    cursor: pointer;
+}
+  header {
+    height: 80px;
+  }
+
+  header ul {
+    display: none;
+    /* Ocultar la lista de navegación en pantallas pequeñas por defecto */
+    position: absolute;
+    width: 150px;
+    border-bottom-right-radius: 20px;
+
+  }
+
+  header ul.show {
+    margin-top: 7px;
+    font-family: "finger";
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    background-color: #905570;
+    height: 230px;
+    z-index: 9999;
+
+}
+  header ul li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 3;
+  }
+
+  header a {
+    text-decoration: underline;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  #content {
+    width: 90%;
+    /* Utiliza el 90% del ancho en pantallas más pequeñas */
+  }
+
+
+
+ h2{
+  font-size: 20px;
+ }
+
+  form {
+    width: 80%;
+  }
+
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="email"],
+  form textarea {
+    width: 90%;
+    /* Utiliza el 100% del ancho */
+    padding: 5px;
+
+  }
+}

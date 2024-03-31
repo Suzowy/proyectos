@@ -1,0 +1,21 @@
+<header>
+  <button class="menu-toggle" aria-label="Toggle Menu">
+    <span>menu</span>
+  </button>
+  <ul>
+    <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+    <li><a [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Proyectos</a></li>
+    <li class="logo"><a href="#">SC</a></li>
+    <li><a [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
+    <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
+  </ul>
+</header>
+
+<section id="content">
+
+  <router-outlet></router-outlet>
+
+</section>
+<footer>
+  &copy; Suzowy 2024
+</footer>
