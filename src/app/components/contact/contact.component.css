@@ -116,7 +116,7 @@
 
 .form__right {
   flex-basis: 50%;
-  max-width: 100%;
+  max-width: 93%;
   max-height: 100%;
 }
 
@@ -130,6 +130,14 @@
   resize: none;
   height: 100%;
 }
+.form__button {
+  width: 125px;
+  margin-top: -23px;
+  margin-left: 62px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
 
 .map {
   display: flex;
@@ -152,23 +160,24 @@
 
 @media (max-width: 800px) {
   .container-info {
-    flex-direction: column; /* Cambiar a disposición en columna */
+    flex-direction: column;
   }
 
   .info,
   .form-box {
-    width: 90%; /* Ocupar todo el ancho disponible */
-    margin: 0; /* Eliminar márgenes laterales */
+    width: 90%;
+    margin: 0;
   }
 
   .map {
-    width: 100%; /* Ajustar el mapa al ancho completo */
-    height: auto; /* Altura automática para mantener la proporción */
+    width: 104%;
+    margin-left: -15px;
+    height: auto;
   }
 
   .iframe {
-    width:90%; /* Ajustar el iframe al ancho completo */
-    height: 200px; /* Establecer una altura fija o proporcional */
+    width:90%;
+    height: 200px;
   }
 }
 
@@ -189,17 +198,12 @@
 
   .form__container {
     width: 90%;
-    display: flex; /* Cambiar a disposición en columna */
-    flex-direction: column; /* Alinear elementos en columna */
+    display: flex;
+    flex-direction: column;
     justify-content: left;
   }
 
-  .form__input[_ngcontent-ng-c465192097] {
 
-    width: 100%;
-    line-height: 4.1rem;
-    margin-left: -25px;
 
-}
 
 }
