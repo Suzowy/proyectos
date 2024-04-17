@@ -59,12 +59,22 @@ a:hover {
 }
 
 .flecha {
-  margin-top: 12px;
-  width: 70px;
+  margin-top: 15px;
+  width: 60px;
   height: auto;
+  opacity: 0.6;
 }
 
-.button-edit,
+.atras {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 5px;
+  width: 40px;
+  height: auto;
+  opacity: 0.6;
+}
+
+/* .button-edit,
 .button-delete {
   text-decoration: none;
   text-align: center;
@@ -112,7 +122,7 @@ a:hover {
   background: #802a25;
   border: 2px solid #d86260;
   box-shadow: inset 0px 0px 5px 3px #d86260;
-}
+} */
 
 .confirm {
   font-size: 15px;
@@ -122,6 +132,72 @@ a:hover {
   background: #f01b2c;
   color: white;
 }
+
+.button-edit,
+.button-delete {
+
+  text-decoration: none;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width:55px;
+  font-weight: 800;
+  height: auto;
+  font-size: 20px;
+  color: rgba(68, 68, 68, 0.817);
+  fill: rgb(109, 109, 109);
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.button-edit {
+  background: #cddce1;
+}
+
+.button-delete {
+  background: #f5d4c5;
+}
+
+.button-edit:hover {
+  background: #547294;
+}
+
+.button-delete:hover {
+  background: #db4040;
+}
+
+.button-edit:hover .svg,
+.button-delete:hover .svg {
+  transform: translateX(1.1em) scale(1.4);
+  fill: #fff;
+}
+
+.button-edit:hover span,
+.button-delete:hover span {
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+.span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* .button:active {
+  transform: scale(0.95);
+} */
 
 /* pantallas más pequeñas */
 @media (max-width: 768px) {
@@ -146,14 +222,14 @@ a:hover {
   .button-edit,
   .button-delete,
   .confirm {
-    width: 15%;
+    width:52px;
     margin-top: 10px;
   }
 
   p {
-    font-size: 20px;
+    font-size:17px;
   }
   a {
-    font-size: 25px;
+    font-size: 20px;
   }
 }

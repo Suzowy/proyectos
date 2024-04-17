@@ -15,13 +15,13 @@
 
 .slider .project {
   text-align: center;
-  background: #f5eeeb;
-  border: 1px solid #bbb;
+  /* background: #f5eeeb;
+  border: 1px solid #bbb; */
   padding: 10px;
 }
 
 .slider .project img {
-  height: 400px;
+  height:auto;
 }
 
 h2 {
@@ -49,9 +49,9 @@ h2 {
   display: inline-block;
   flex-wrap: wrap;
   text-align: center;
-  background: #f5eeeb;
-  border: 1px solid #bbb;
-  box-shadow: 3px 3px 1px -1px #c2c2c2;
+  /* background: #f5eeeb;
+  border: 1px solid #bbb; */
+  box-shadow: 2px 2px 1px -1px #c2c2c2c6;
   padding: 10px;
   margin-bottom: 30px;
   margin: 10px;
@@ -87,7 +87,7 @@ p {
 
 .project img {
   width: 100%;
-  height: 150px;
+  height:auto;
   overflow: hidden;
 }
 
@@ -111,6 +111,11 @@ p {
   .container2 .project {
     width: 85%; /* Cambiado: reduce aún más el ancho de los proyectos para pantallas más pequeñas */
   }
+
+  .container2 h2{
+    font-size: 13px;
+}
+
 
   .slider .project img {
     max-height: 185px; /* Cambiado: reduce la altura máxima de las imágenes del slider */
