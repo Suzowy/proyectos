@@ -13,3 +13,58 @@
 }
 
 
+.form__group {
+  position: relative;
+  margin-top: 50px;
+}
+
+.form__input {
+  font-family: "yayou";
+  position: relative;
+  width: 55%;
+  height: 20px;
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding: 1rem 1.2rem;
+  outline: none;
+  background-color: #f8efecf8;
+  line-height: 2.1rem;
+  z-index: 1;
+}
+
+.form__input:focus {
+  border: 0.2rem solid #607b99;
+}
+
+.form__label {
+  font-family: "finger";
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  z-index: -1;
+  color: #743f61;
+  font-size: 1.3rem;
+  transition: all 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.form__input:focus ~ label,
+.form__input:not(:placeholder-shown) ~ label {
+  top: -2rem;
+  left: 0;
+  z-index: 1;
+  font-size: 15px;
+  color: #743f61;
+}
+
+
+@media (max-width: 585px) {
+
+  .form__input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }}

@@ -33,7 +33,7 @@ header {
   width: 100%;
   height: 88px;
   justify-content: center;
-  background: #547294;
+  background: #778593;
   position: fixed;
   text-transform: uppercase;
 }
@@ -119,7 +119,7 @@ h2 {
 }
 
 /* Formularios generales para todas las páginas */
-form {
+/* form {
   width: 80%;
   margin: 0 auto;
   font-size: 15px;
@@ -149,7 +149,7 @@ form textarea {
   line-height: 1.1rem;
   z-index: 1;
 }
-
+*/
 form button,
 form input[type="submit"] {
   display: block;
@@ -209,149 +209,99 @@ form input[disabled]:hover {
 
 /* Pie de página */
 footer {
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 100%;
   height: auto;
-  margin: 0px auto;
-  /* box-shadow: 0 0 40px rgba(0, 0, 0, 0.864); */
-  background: #547294d2;
+  background: #7c8c9b;
   padding-top: 50px;
+  padding-bottom: 30px;
   overflow: hidden;
 }
 /* social media */
-.main {
+.card {
+  width: fit-content;
+  height: fit-content;
+  background-color: #f2e7e3;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  gap: 0.5em;
+  justify-content: center;
+  padding: 20px 20px;
+  gap: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
 }
 
-.up {
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 5px;
+  background-color: rgb(44, 44, 44);
   display: flex;
-  flex-direction: row;
-  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+/* github*/
+.containerFour:hover {
+  background-color: rgb(0, 0, 0);
+  transition-duration: 0.3s;
 }
 
-.down {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
 }
 
-.card1 {
-  width: 90px;
-  height: 90px;
-  outline: none;
-  border: none;
-  background: #f2e7e3;
-  border-radius: 90px 5px 5px 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  transition: 0.2s ease-in-out;
+.socialSvg {
+  width: 17px;
 }
 
-.instagram {
-  margin-top: 1.5em;
-  margin-left: 1.2em;
-  fill: #cc39a4;
+.socialSvg path {
+  fill: rgb(255, 255, 255);
 }
 
-.card2 {
-  width: 90px;
-  height: 90px;
-  outline: none;
-  border: none;
-  background: #f2e7e3;
-  border-radius: 5px 90px 5px 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  transition: 0.2s ease-in-out;
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
 }
 
-.linkedin {
-  margin-top: 1.5em;
-  margin-left: -0.9em;
-  fill: #0077b5;
-}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
 
-.card3 {
-  width: 90px;
-  height: 90px;
-  outline: none;
-  border: none;
-  background: #f2e7e3;
-  border-radius: 5px 5px 5px 90px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  transition: 0.2s ease-in-out;
-}
-
-.github {
-  margin-top: -0.6em;
-  margin-left: 1.2em;
-}
-
-.card4 {
-  width: 90px;
-  height: 90px;
-  outline: none;
-  border: none;
-  background: #f2e7e3;
-  border-radius: 5px 5px 90px 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  transition: 0.2s ease-in-out;
-}
-
-.discord {
-  margin-top: -0.9em;
-  margin-left: -1.2em;
-  fill: #8c9eff;
-}
-
-.card1:hover {
-  cursor: pointer;
-  scale: 1.1;
-  background-color: #cc39a4;
-}
-
-.card1:hover .instagram {
-  fill: white;
-}
-
-.card2:hover {
-  cursor: pointer;
-  scale: 1.1;
-  background-color: #03a9f4;
-}
-
-.card2:hover .linkedin {
-  fill: white;
-}
-
-.card3:hover {
-  cursor: pointer;
-  scale: 1.1;
-  background-color: black;
-}
-
-.card3:hover .github {
-  fill: white;
-}
-
-.card4:hover {
-  cursor: pointer;
-  scale: 1.1;
-  background-color: #8c9eff;
-}
-
-.card4:hover .discord {
-  fill: white;
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .copy {
+
   padding: 20px;
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.817);
+  font-size: 15px;
   font-weight: lighter;
 }
 
@@ -414,11 +364,12 @@ footer {
     display: none;
   }
 
-  #content,
-  footer {
+  #content {
     width: 90%;
     /* Utiliza el 90% del ancho en pantallas más pequeñas */
   }
+
+
 
   h2 {
     font-size: 20px;
