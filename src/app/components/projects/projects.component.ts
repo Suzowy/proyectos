@@ -32,7 +32,11 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
         autoControls: true,
         stopAutoOnClick: true,
         pager: true,
-        slideWidth: 600
+        slideWidth: 600,
+        responsive: true,
+        pause: 5000,
+        speed: 1000,
+        easing: "ease-in-out"
       });
       this.projectsLoaded = true;
     }

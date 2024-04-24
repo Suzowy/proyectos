@@ -11,28 +11,28 @@
 
   <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
 
-    <!-- Grupo para el nombre -->
+
     <div class="form__group">
       <input type="text" class="form__input" name="name" #name="ngModel" [(ngModel)]="project.name" required placeholder="Nombre" />
       <label class="form__label" for="name">Nombre</label>
       <span class="formError" *ngIf="name.touched && !name.valid">El nombre es obligatorio</span>
     </div>
 
-    <!-- Grupo para la descripción -->
+
     <div class="form__group">
       <textarea class="form__input" name="description" #description="ngModel" [(ngModel)]="project.description" required placeholder="Descripción"></textarea>
       <label class="form__label" for="description">Descripción</label>
       <span class="formError" *ngIf="description.touched && !description.valid">La descripción es obligatoria</span>
     </div>
 
-    <!-- Grupo para la categoría -->
+
     <div class="form__group">
       <input type="text" class="form__input" name="category" #category="ngModel" [(ngModel)]="project.category" required placeholder="Categoria" />
       <label class="form__label" for="category">Categoría</label>
       <span class="formError" *ngIf="category.touched && !category.valid">La categoría es obligatoria</span>
     </div>
 
-    <!-- Otros campos -->
+
     <div class="form__group">
       <input type="number" class="form__input" name="year" #year="ngModel" [(ngModel)]="project.year"  />
       <label class="form__label" for="year"></label>

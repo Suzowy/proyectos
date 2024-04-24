@@ -14,19 +14,12 @@ export class SliderComponent implements OnInit {
 @Output() conseguirAutor = new EventEmitter();
 
   constructor() {
-    this['autor']={
-      nombre:"Soraya Casanova",
-      website:"suzowyweb.es",
-      github:"suzowy"
-    }
+
   }
 
   ngOnInit(): void {
-    $("logo").click(function (e: { preventDefault: () => void; }) {
-      e.preventDefault();
-      $("header").css("background", "pink")
-        .css("height", "50px");
-    });
+
+
 
     $('.galeria').bxSlider({
       adaptiveHeight: true,
@@ -38,9 +31,6 @@ export class SliderComponent implements OnInit {
       slideWidth: this.anchura
     });;
   }
-lanzar(event: any){
-  console.log(event);
 
-  this.conseguirAutor.emit(this['autor']);
-}
+
 }
