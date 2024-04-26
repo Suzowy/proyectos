@@ -14,7 +14,7 @@ export class DetailComponent implements OnInit {
   public url: string;
   public project!: Project;
   public confirm: boolean;
-  public isLocalMode: boolean; // Nueva variable para el modo local
+  public isLocalMode: boolean = true; // Nueva variable para el modo local
 
   constructor(
     private _projectService: ProjectService,
