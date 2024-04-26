@@ -1,4 +1,4 @@
 export var Global =  {
-  url:'https://backend-proyectos-eq91.onrender.com'
+  url:'https://backend-proyectos-eq91.onrender.com/api'
 
 }
