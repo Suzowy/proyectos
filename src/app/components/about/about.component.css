@@ -50,11 +50,14 @@
 
 @media (max-width: 585px) {
   #title h1 {
-    font-size: 26px;
+    font-size: 30px;
 }
 
+.about{
+  width: 90%;
+
+}
 .about p {
   font-size: 20px;
-
 }
 }

@@ -12,7 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .slider .project {
@@ -56,7 +55,7 @@ h2 {
   padding: 10px;
   margin-bottom: 30px;
   margin: 10px;
-  filter: grayscale(100%);
+  filter: grayscale(80%);
   transition: 500ms ease-out;
 
 }
@@ -68,10 +67,6 @@ h2 {
   filter: saturate(120%);
   transform: scale(1.1);
 }
-
-
-
-
 
 
 .container2 h2 {
@@ -111,29 +106,31 @@ p {
 /* Media query para ajustar el diseño en pantallas más pequeñas */
 @media (max-width: 768px) {
   .container2 .project {
-    width: 40%;
+    width: 100%;
+
   }
 
+  .slider {
+    height:auto;
+  }
+
+
   .slider .project img {
-    max-height: 300px; /* Cambiado: reduce la altura máxima de las imágenes del slider */
+   height: auto;
   }
 }
 
 @media (max-width: 480px) {
   .container2 .project {
-    width: 85%; /* Cambiado: reduce aún más el ancho de los proyectos para pantallas más pequeñas */
+    width: 90%;
   }
 
   .container2 h2{
     font-size: 13px;
 }
 
-
-  .slider .project img {
-    max-height: 185px; /* Cambiado: reduce la altura máxima de las imágenes del slider */
-  }
   .slider .project {
-    max-width: 20%;
-    height: 200px;
+    max-width: 100%;
+    height: auto;
   }
 }
