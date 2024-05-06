@@ -1,7 +1,8 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule , provideHttpClient, withFetch } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule} from './app-routing.module';
 
@@ -13,6 +14,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
+
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { EditComponent } from './components/edit/edit.component';
 
   ],
   providers: [
+    provideHttpClient(withFetch()),
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

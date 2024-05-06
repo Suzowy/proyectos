@@ -39,13 +39,20 @@ url: any;
         if (response.project) {
 
           //subir la imagen
-          this._uploadService.makeFileRequest(Global.url + "/upload-image/" + response.project._id, [], this.filesToUpload, 'image').then((result: any) => {
-
+          this._uploadService.makeFileRequest(
+            Global.url + "/upload-image/" + response.project._id,
+            [],
+            this.filesToUpload,
+            'image'
+          ).then((result: any) => {
             this.save_project = result.project;
-
             this.status = "success";
             form.reset();
+          }).catch(error => {
+            console.error("Error al subir la imagen:", error);
+            this.status = "failed";
           });
+
 
         } else {
           this.status = "failed";
