@@ -21,7 +21,8 @@
 
   <ul *ngIf="showAllProjects">
     <li *ngFor="let project of projects" class="project">
-      <a [routerLink]="['/proyecto', project._id]">
+
+      <a  (click)="scrollToTopAndNavigate(project._id)"  [routerLink]="['/proyecto', project._id]">
         <div class="image">
           <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img">
         </div>

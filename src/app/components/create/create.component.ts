@@ -69,4 +69,7 @@ url: any;
     this.filesToUpload = <Array<File>>fileInput.target.files;
 
   }
+
+
+
 }

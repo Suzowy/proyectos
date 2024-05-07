@@ -7,6 +7,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  router: any;
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
@@ -31,4 +32,11 @@ export class AppComponent implements OnInit {
       });
     }
   }
+  scrollToTopAndNavigate(projectId: string): void {
+    // Desplaza hacia arriba
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Navega al detalle del proyecto
+    this.router.navigate(['/proyecto', projectId]);
+  }
+
 }

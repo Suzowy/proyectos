@@ -1,8 +1,8 @@
 .container {
-  width: 90%;
+  width: 70%;
   height: auto;
   margin: 0 auto;
-
+padding-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -28,13 +28,15 @@ h2 {
   font-family: "finger";
   color: #686868;
   border-bottom: 1px solid #ccc;
+  margin-top: 100px;
   margin-bottom: 10px;
   padding-bottom: 10px;
+  padding-top: 10px;
   text-align: left;
 }
 
 .container2 {
-  width: 90%;
+  width: 70%;
   height: auto;
   margin: 0 auto;
   margin-top: 50px;
@@ -91,6 +93,26 @@ p {
   font-weight: lighter;
 }
 
+
+.project-list {
+  /* Añade transición suave para efectos de entrada/salida */
+  transition: all 0.5s ease-in-out; /* Cambia la duración y tipo de transición según tus preferencias */
+}
+
+.project-list.ng-animate {
+  opacity: 0; /* Define el estado inicial antes de la transición */
+}
+
+.project-list.ng-animate.ng-enter {
+  opacity: 1; /* Define el estado final después de la transición */
+}
+
+.project-list.ng-animate.ng-leave {
+  opacity: 0; /* Define el estado de salida durante la transición */
+}
+
+
+
 .project img {
   width: 100%;
   height:auto;
@@ -121,6 +143,12 @@ p {
 }
 
 @media (max-width: 480px) {
+
+  .container ,
+  .container2{
+    width: 90%;
+  }
+
   .container2 .project {
     width: 90%;
   }

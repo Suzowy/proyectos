@@ -3,23 +3,49 @@
     <span>menu</span>
   </button>
   <ul>
-    <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mi</a></li>
-    <li><a [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Proyectos</a></li>
-    <li class="logo"><a href="#">SC</a></li>
-    <li><a [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
-    <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
+
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#projects">Proyectos</a></li>
+    <!-- <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+    <li><a [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Proyectos</a></li> -->
+    <li class="logo"><a href="#content">SC</a></li>
+
+    <!-- <li><a href="#create">Crear proyecto</a></li> -->
+  <li><a   (click)="scrollToTopAndNavigate('/crear-proyecto')"  [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
+
+
+    <!-- <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li> -->
+    <li><a href="#contact">Contacto</a></li>
   </ul>
 </header>
 
 <section id="content">
 
-  <router-outlet></router-outlet>
+  <section id="about">
+    <router-outlet></router-outlet>
+  </section>
 
+  <section id="projects">
+    <app-projects></app-projects>
+  </section>
+
+
+  <!-- <section id="create">
+    <app-create></app-create>
+  </section> -->
+
+
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
+  <!-- <router-outlet></router-outlet> -->
 </section>
 <footer>
 
 
   <!-- social media -->
+
+  <h2>Sigueme en mis redes sociales</h2>
   <div class="card">
     <a class="socialContainer containerOne" href="https://www.instagram.com/suzowi/">
       <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
@@ -57,3 +83,4 @@
 
   <div class="copy">COPYRIGHT &copy; Suzowy 2024 • Navarra based Freelance  Fullstack Developer</div>
 </footer>
+

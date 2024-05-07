@@ -15,6 +15,7 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
   public url: string;
   public showAllProjects: boolean = false;
   public projectsLoaded: boolean = false;
+  router: any;
 
   constructor(private _projectService: ProjectService) {
     this.url = Global.url;
@@ -57,5 +58,12 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
 
   toggleProjects() {
     this.showAllProjects = !this.showAllProjects;
+  }
+
+  scrollToTopAndNavigate(projectId: string): void {
+    // Desplaza hacia arriba
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Navega al detalle del proyecto
+    this.router.navigate(['/proyecto', projectId]);
   }
 }

@@ -11,6 +11,11 @@
 /* estilos generales */
 
 /* Estilos generales */
+html {
+  scroll-behavior: smooth;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -114,6 +119,7 @@ h2 {
   font-size: 30px;
   color: #686868;
   border-bottom: 1px solid #ccc;
+  margin-top: 50px;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
@@ -220,6 +226,12 @@ footer {
   padding-top: 50px;
   padding-bottom: 30px;
   overflow: hidden;
+}
+
+footer h2{
+color: #fef7ef;
+font-weight: lighter;
+font-size: 15px;
 }
 /* social media */
 .card {
