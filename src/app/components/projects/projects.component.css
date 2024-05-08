@@ -21,19 +21,9 @@ padding-top: 10px;
 
 .slider .project img {
   border-radius: 10px;
-  height:auto;
+  height:340px;
 }
 
-h2 {
-  font-family: "finger";
-  color: #686868;
-  border-bottom: 1px solid #ccc;
-  margin-top: 100px;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  text-align: left;
-}
 
 .container2 {
   width: 70%;
@@ -44,8 +34,8 @@ h2 {
 }
 
 .container2 .project {
-  width: 20%;
-  height: auto;
+  width: 40%;
+  height: 250;
   border-radius: 10px;
   background: #f5f5f5;
   position: relative;
@@ -57,7 +47,7 @@ h2 {
   padding: 10px;
   margin-bottom: 30px;
   margin: 10px;
-  filter: grayscale(80%);
+  filter: grayscale(50%);
   transition: 500ms ease-out;
 
 }
@@ -72,7 +62,7 @@ h2 {
 
 
 .container2 h2 {
-  font-size: 17px;
+  font-size: 20px;
   cursor: pointer;
 }
 

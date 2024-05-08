@@ -56,9 +56,9 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
     );
   }
 
-  toggleProjects() {
-    this.showAllProjects = !this.showAllProjects;
-  }
+  // toggleProjects() {
+  //   this.showAllProjects = !this.showAllProjects;
+  // }
 
   scrollToTopAndNavigate(projectId: string): void {
     // Desplaza hacia arriba

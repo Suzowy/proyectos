@@ -2,7 +2,7 @@
   width: 70%;
   height: auto;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   display: block;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .container .image {
-  width: 50%;
+  width: 70%;
   height: auto; /* Cambia este valor según la altura deseada */
   overflow: hidden;
 }
@@ -23,8 +23,6 @@
   height: auto;
   object-fit: contain;
 }
-
-
 
 .container .data {
   float: left;
@@ -77,64 +75,12 @@ a:hover {
   opacity: 0.6;
 }
 
-/* .button-edit,
-.button-delete {
-  text-decoration: none;
-  text-align: center;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 10px;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 10%;
-  height: auto;
-  color: whitesmoke;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.button-edit:hover,
-.button-delete:hover {
-  background: #321b62;
-  border: 2px solid #8560d8;
-  box-shadow: inset 0px 0px 5px 3px #7d58cb;
-  color: whitesmoke;
-}
-
-.button-edit {
-  background: #609ed8;
-  border: 2px solid #253780;
-  box-shadow: inset 0px 0px 5px 1px #302580;
-}
-
-.button-delete {
-  background: #d86260;
-  border: 2px solid #802a25;
-  box-shadow: inset 0px 0px 5px 1px #802825;
-}
-
-.button-edit:hover {
-  background: #253780;
-  border: 2px solid #609ed8;
-  box-shadow: inset 0px 0px 5px 3px #609ed8;
-}
-
-.button-delete:hover {
-  background: #802a25;
-  border: 2px solid #d86260;
-  box-shadow: inset 0px 0px 5px 3px #d86260;
-} */
-
 .form__buttons{
-  width: 100%;
-  margin-top: 30px;
+  width: 98%;
+  margin-top: -152px;
   padding:10px;
   display:flex;
   justify-content:flex-end;
-
-
 }
 
 .confirm {
@@ -148,7 +94,6 @@ a:hover {
 
 .button-edit,
 .button-delete {
-
   text-decoration: none;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -166,7 +111,6 @@ a:hover {
   align-items: center;
   cursor: pointer;
   border-radius: 5px;
-
 }
 
 .button-edit {
@@ -209,10 +153,6 @@ a:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-/* .button:active {
-  transform: scale(0.95);
-} */
-
 /* pantallas más pequeñas */
 @media (max-width: 768px) {
   .container {
@@ -221,6 +161,10 @@ a:hover {
     align-items: stretch;
     text-align: center;
   }
+
+  .container1 {
+    width: 90%;
+}
 
   .container .image,
   .container .data {
@@ -233,6 +177,12 @@ a:hover {
     padding: 0px;
   }
 
+
+  .form__buttons{
+    width: 99%;
+    margin-top: -126px;
+}
+
   .button-edit,
   .button-delete,
   .confirm {
@@ -243,6 +193,7 @@ a:hover {
   p {
     font-size:17px;
   }
+
   a {
     font-size: 20px;
   }

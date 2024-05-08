@@ -2,12 +2,11 @@
   width: 70%;
   height: auto;
   margin: 0 auto;
+  margin-top:50px;
   margin-bottom: 20px;
 }
 
 /* PAGINA DE CONTACTO */
-
-
 
 .container-info {
   width: 80%;
@@ -24,8 +23,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 0 1.5rem;
+  margin-bottom: 20px;
+  padding: 0 15px;
 }
 
 .icon {
@@ -33,34 +32,37 @@
   height: 40px;
 }
 .data {
-  width: 70%;
-  margin-bottom: 1.5rem;
-  padding: 2rem 1rem;
+  width: 60%;
+  margin-bottom: 20px;
+  padding: 20px 10px;
   text-align: center;
   border-radius: 5px;
   color: #607b99;
   background-color: #8aafd62a;
   border: 1px solid #607b99;
-  box-shadow: 0 1rem 1rem -8px rgba(0, 0, 0, 0.277);
+  box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.277);
 }
 
 .email-link {
   text-decoration: none;
-  color:#395f8a;
+  color:#81398a;
 }
 
+.h2-form {
+  font-size: 20px;
+  cursor: pointer;
+}
 
 .form-box {
   flex-basis: 66%;
-  padding: 0 1.5rem;
+  padding: 0 15px;
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  font-size: 17px;
+  margin-top: 10px;
 }
 .contact-form {
-
   width: 100%;
 }
 .form__container {
@@ -73,7 +75,7 @@
 
   margin-top: 10px;
   flex-basis: 47%;
-  margin-right: 1.5rem;
+  margin-right: 15px;
 }
 
 .form__group {
@@ -198,7 +200,6 @@
 
   .container {
     width: 90%;
-
   }
 
   .data {
@@ -219,8 +220,6 @@
     flex-direction: column;
     justify-content: left;
   }
-
-
 
 
 }
