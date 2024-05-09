@@ -96,9 +96,19 @@ font-size: 15px;
 
 .copy {
 
-  padding: 20px;
+  margin-top: 60px;
   color: rgba(245, 245, 245, 0.817);
   font-size: 15px;
   font-weight: lighter;
 }
 
+.creditos{
+  margin-top: 40px;
+  font-size: 14px;
+  color: rgba(240, 248, 255, 0.606);
+}
+
+.creditos a{
+  text-decoration: none;
+  color: #37404f;
+}
