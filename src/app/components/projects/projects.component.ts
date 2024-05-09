@@ -11,6 +11,10 @@ declare var $: any;
   providers: [ProjectService]
 })
 export class ProjectsComponent implements OnInit, AfterViewChecked {
+  onImageError(event: Event) {
+    const target = event.target as HTMLImageElement;
+    target.src = 'assets/img/not-found.png';
+  }
   public projects: Project[] = [];
   public url: string;
   public showAllProjects: boolean = false;

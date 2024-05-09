@@ -19,7 +19,7 @@
     <div class="data">
       <img class="icon" src="assets/img/email.png" alt="">
       <h4 class="subtitle">
-        <a href="mailto:{{ email }}" class="email-link"> {{ email }} </a>
+        <a href="mailto:{{ email }}" class="email-link">{{ email }}</a>
       </h4>
     </div>
 
@@ -39,30 +39,81 @@
   <div>
     <h2 class="h2-form">¿Cómo puedo ayudarte?</h2>
   </div>
-  <form class="contact-form" action="/send-email" method="POST">
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     <div class="form__container">
       <section class="form__left">
         <div class="form__group">
-          <input type="text" class="form__input" name="name" required placeholder="Nombre">
-          <label for="name" class="form__label">Nombre</label>
+          <input
+            type="text"
+            class="form__input"
+            name="name"
+            ngModel
+            required
+            pattern="[A-Za-z]+"
+            #name="ngModel"
+          />
+          <label class="form__label">Nombre</label>
+          <!-- Mensaje de error para el campo "name" -->
+          <span class="formError" *ngIf="name.invalid && name.touched">
+            El nombre debe contener solo letras.
+          </span>
         </div>
+
         <div class="form__group">
-          <input type="email" class="form__input" name="email" required placeholder="Email">
-          <label for="email" class="form__label">Email</label>
+          <input
+            type="email"
+            class="form__input"
+            name="userEmail"
+            ngModel
+            required
+            pattern=".+@.+"
+            placeholder="Email"
+            #userEmail="ngModel"
+          />
+          <label class="form__label">Email</label>
+
+          <span class="formError" *ngIf="userEmail.invalid && userEmail.touched">
+            Debes ingresar un correo electrónico válido.
+          </span>
         </div>
+
         <div class="form__group">
-          <input type="text" class="form__input" name="subject" required placeholder="Asunto">
-          <label for="subject" class="form__label">Asunto</label>
+          <input
+            type="text"
+            class="form__input"
+            name="subject"
+            ngModel
+            required
+            placeholder="Asunto"
+            #subject="ngModel"
+          />
+          <label class="form__label">Asunto</label>
+          <!-- No se muestra error para "subject" ya que solo tiene "required" -->
         </div>
       </section>
 
       <section class="form__right">
         <div class="form__group form__group--textarea">
-          <textarea class="form__input form__input--textarea" name="message" required placeholder="Mensaje"></textarea>
-          <label for="message" class="form__label">Mensaje</label>
+          <textarea
+            class="form__input form__input--textarea"
+            name="message"
+            ngModel
+            required
+            minlength="20"
+            placeholder="Mensaje"
+            #message="ngModel"
+          ></textarea>
+          <label class="form__label">Mensaje</label>
+          <!-- Mensaje de error para el campo "message" -->
+          <span class="formError" *ngIf="message.invalid && message.touched">
+            El mensaje debe contener al menos 20 caracteres.
+          </span>
         </div>
       </section>
     </div>
 
-    <input type="submit" class="form__button" value="Enviar mensaje">
+    <input type="submit" class="form__button" value="Enviar mensaje" />
   </form>
+  <div *ngIf="showSuccessMessage" class="message success">
+    El formulario ha sido enviado con éxito.
+  </div>

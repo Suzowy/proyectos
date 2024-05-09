@@ -18,15 +18,23 @@
     <h2><img src="assets/img/vision.png" alt="icono" class="flecha"> Todos los proyectos</h2>
 
     <ul>
-        <li *ngFor="let project of projects" class="project">
-            <a (click)="scrollToTopAndNavigate(project._id)" [routerLink]="['/proyecto', project._id]">
-                <div class="image">
-                    <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img">
-                </div>
-                <h3>{{project.name}}</h3>
-                <p>{{project.category}}</p>
-            </a>
-        </li>
+      <li *ngFor="let project of projects" class="project">
+        <a
+          (click)="scrollToTopAndNavigate(project._id)"
+          [routerLink]="['/proyecto', project._id]">
+          <div class="image">
+            <img
+              src="{{url+'/get-image/'+project.image.substring(8)}}"
+              *ngIf="project.image"
+              alt="Imagen de proyecto"
+              (error)="onImageError($event)"
+            >
+          </div>
+          <h3>{{project.name}}</h3>
+          <p>{{project.category}}</p>
+        </a>
+      </li>
     </ul>
+
 </div>
 

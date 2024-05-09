@@ -187,9 +187,9 @@ form input[disabled]:hover {
 }
 
 .formError {
-  font-size: 15px;
+  width: 100%;
+  font-size: 13px;
   margin-left: 5px;
-  padding: 5px;
   color: #e63242;
 }
 
@@ -197,16 +197,17 @@ form input[disabled]:hover {
   padding: 5px;
   border: 1px solid #eee;
   width: 50%;
-  /* Utiliza el 100% del ancho */
 }
 
 .success {
+  width: 100%;
   color: rgb(51, 181, 51);
   font-family: "finger";
   font-size: 15px;
 }
 
 .failed {
+  width: 100%;
   color: #e63242;
   font-family: "finger";
   font-size: 15px;
