@@ -3,11 +3,12 @@
   width: 300px;
   height: auto;
   margin-top: -30px;
-  margin-bottom:20px;
+  margin-left:-19px;
+  margin-bottom: 22px;
   border-radius:50%;
 }
 #title {
-  width: 70%;
+  width: 100%;
   margin: 0px auto;
   text-align: center;
   margin-top: 100px;
@@ -19,7 +20,7 @@
   font-family: "finger";
   color: #1a191acb;
   line-height: 2;
-  font-size: 35px;
+  font-size: 50px;
   padding-bottom:20px;
   transform: scale(0.7, 1.8);
 }
@@ -60,7 +61,7 @@
 
 @media (max-width: 585px) {
   #title h1 {
-    font-size: 28px;
+    font-size:38px;
 }
 
 .about{
