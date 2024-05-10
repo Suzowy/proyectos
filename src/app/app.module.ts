@@ -17,7 +17,6 @@ import { EditComponent } from './components/edit/edit.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
