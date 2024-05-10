@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   providers: [ProjectService]
 })
 export class DetailComponent implements OnInit {
+
   public url: string;
   public project!: Project;
   public confirm: boolean;
@@ -42,6 +43,13 @@ export class DetailComponent implements OnInit {
       }
     );
   }
+
+  onImageError(event: Event) {
+    const target = event.target as HTMLImageElement;
+    target.src = 'assets/img/not-found.png';
+  }
+
+
 
   getProject(id: any) {
     this._projectService.getProject(id).subscribe(

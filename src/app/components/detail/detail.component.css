@@ -24,9 +24,10 @@
   object-fit: contain;
 }
 
-.container .data {
+.data {
+
   float: left;
-  width: 50%;
+  width: 90%;
   margin-left: 20px;
   padding: 30px;
   text-align: justify;

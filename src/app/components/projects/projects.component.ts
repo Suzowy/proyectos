@@ -47,6 +47,9 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
     }
   }
 
+
+
+
   getProjects() {
     this._projectService.getProjects().subscribe(
       response => {

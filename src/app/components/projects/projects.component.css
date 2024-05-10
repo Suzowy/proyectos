@@ -46,7 +46,7 @@ padding-top: 10px;
   text-align: center;
   padding: 10px;
   margin-bottom: 30px;
-  margin: 10px;
+  margin: 30px;
   filter: grayscale(50%);
   transition: 500ms ease-out;
 
@@ -119,8 +119,8 @@ p {
 /* Media query para ajustar el diseño en pantallas más pequeñas */
 @media (max-width: 768px) {
   .container2 .project {
-    width: 100%;
-
+    width: 95%;
+margin: 20px;
   }
 
   .slider {
@@ -142,6 +142,7 @@ p {
 
   .container2 .project {
     width: 90%;
+    margin: 10px;
   }
 
   .container2 h2{
