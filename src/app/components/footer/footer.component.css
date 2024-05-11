@@ -94,7 +94,7 @@ font-size: 15px;
 }
 
 .copy {
-width: 90%;
+  width:97%;
   margin-top: 80px;
   color: rgba(245, 245, 245, 0.817);
   font-size: 13px;
@@ -109,5 +109,5 @@ width: 90%;
 
 .creditos a{
   text-decoration: none;
-  color: #37404f;
+  color: #37404fd6;
 }
