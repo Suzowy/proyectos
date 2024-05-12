@@ -34,13 +34,15 @@
 }
 
 h4 {
+
   font-size: 17px;
   font-weight: 600;
-  color: rgb(31, 31, 31);
-  margin-bottom: 10px;
+  color: rgba(31, 31, 31, 0.886);
+  margin-bottom: 20px;
 }
 
 p {
+
   font-size: 16px;
   font-weight: lighter;
   color: #526f8fed;
@@ -170,12 +172,14 @@ a:hover {
   .container .image,
   .container .data {
     width: 100%;
-    margin-left: 0;
+    margin-left: 0px;
     margin-top: 20px;
   }
 
-  .container .data {
-    padding: 0px;
+.data {
+      width: 90%;
+      margin-left: 17px;
+      padding:1px;
   }
 
 

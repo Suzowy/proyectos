@@ -6,7 +6,7 @@
       <a [routerLink]="['/proyecto', project._id]">
         <div class="image">
           <img
-            [src]="url + '/get-image/' + project.image.substring(8)"
+            [src]="url + '/get-image/' + project.image"
             alt="Imagen de proyecto"
             (error)="onImageError($event)"
           >
@@ -28,7 +28,7 @@
           [routerLink]="['/proyecto', project._id]">
           <div class="image">
             <img
-              src="{{url+'/get-image/'+project.image.substring(8)}}"
+              src="{{url+'/get-image/'+project.image}}"
               *ngIf="project.image"
               alt="Imagen de proyecto"
               (error)="onImageError($event)"
