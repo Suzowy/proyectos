@@ -16,6 +16,6 @@ export class TitleComponent implements OnInit {
     this.subtitle = "Fullstack Developer";
     this.email = "suzowy@gmail.com";
   }  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
 }

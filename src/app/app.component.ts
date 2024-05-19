@@ -1,12 +1,15 @@
 import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  title(_title: any) {
+    throw new Error('Method not implemented.');
+  }
   router: any;
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 

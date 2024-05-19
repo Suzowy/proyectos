@@ -3,7 +3,7 @@ import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
 import { Router, ActivatedRoute} from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -18,8 +18,8 @@ export class DetailComponent implements OnInit {
   constructor(
   	private _projectService: ProjectService,
   	private _router: Router,
-  	private _route: ActivatedRoute,
-    public authService: AuthService
+  	private _route: ActivatedRoute
+
   ){
   	this.url = Global.url;
     this.confirm = false;

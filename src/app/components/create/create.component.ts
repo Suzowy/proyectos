@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private _projectService: ProjectService,
-    private _uploadService: UploadService
+    public _uploadService: UploadService
   ) {
     this.title = "crear proyecto";
     this.project = new Project('', '', '', '', new Date().getFullYear(), '', '');
