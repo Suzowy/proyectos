@@ -1,0 +1,204 @@
+[33mcommit 3bb1001479bae0bc29d9ca72d3a0c7e7fc82094c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 82297f6 3ed63cc
+Author: Suzowy <suzowy@gmail.com>
+Date:   Sun May 12 20:55:01 2024 +0200
+
+    Merge branch 'master' of https://github.com/Suzowy/proyectos
+
+[33mcommit 82297f63e924ef8875e0cada5a1e2db7481bba5c[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Sun May 12 20:53:24 2024 +0200
+
+    funcionando
+
+[33mcommit 3ed63ccca2b871fbbc1d92014b317e228ffff063[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Sun May 12 14:51:13 2024 +0200
+
+    ok
+
+[33mcommit 23f18ee13ae7a0338fb2b54f0a25ae0d80930cdf[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Sun May 12 14:35:59 2024 +0200
+
+    ok
+
+[33mcommit 6545a6b23a36ff70f628363a7d512ef438508869[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Sun May 12 13:15:43 2024 +0200
+
+    solucionado problema imagenes
+
+[33mcommit 566682ece1da9411d8a8619a6826d3244f6adcb9[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Sat May 11 11:54:52 2024 +0200
+
+    router-outlet
+
+[33mcommit c936685f89c10630966583961e8b74ac954b191c[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Sat May 11 11:52:23 2024 +0200
+
+    retoques esteticos
+
+[33mcommit a3d5e4a130093f5a8d127ddcd303b2593b621b97[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri May 10 13:40:13 2024 +0200
+
+    slider
+
+[33mcommit 9cd3e23f0500c1585b79ec50dde4a1fd870be39e[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri May 10 13:36:52 2024 +0200
+
+    n
+
+[33mcommit f67fd696bdf0da0f9a5deac4e84f682f469f4f8e[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri May 10 12:45:32 2024 +0200
+
+    nada
+
+[33mcommit d4daea9adccdc89c54040efb5ce02051ba82dc99[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Thu May 9 13:22:43 2024 +0200
+
+    img-error
+
+[33mcommit 7566ed310c6b15d33a2ef3e9bbc28c0c42e75e0f[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Thu May 9 11:54:15 2024 +0200
+
+    credits
+
+[33mcommit 7f1c6c37421b95c3dab9ba2a4fbdf42fcda8276b[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Thu May 9 11:29:11 2024 +0200
+
+    db
+
+[33mcommit 8b0ee800870677a3ea1a44cd6f72034430df9830[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Thu May 9 10:52:16 2024 +0200
+
+    nada
+
+[33mcommit 17fad471afb6fe4b5846c7f77d0d2821da2823d8[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Thu May 9 10:12:43 2024 +0200
+
+    foto perfil animada
+
+[33mcommit 47e97a5b594927e963f87da76942d6fc2e58be0a[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Wed May 8 14:19:48 2024 +0200
+
+    foto perfil
+
+[33mcommit 199f8c4ac089d7cbe079c9028905d14b3dcdae12[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Wed May 8 13:28:16 2024 +0200
+
+    cambios visuales formato movil
+
+[33mcommit 209e7674d88ffc95003e251f69787695e2c5a86d[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Tue May 7 13:33:04 2024 +0200
+
+    formato todo en una sola pagina
+
+[33mcommit e92637da354d6e95cd186115b97afffa3e74f3e7[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Mon May 6 12:23:38 2024 +0200
+
+    carga de imagenes
+
+[33mcommit 2ba16687387770269f661699f0ebec3b9202ffbc[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri Apr 26 13:42:55 2024 +0200
+
+    local mode
+
+[33mcommit 9c5c38895b10a9ba0b74da4e74aee95f7920162e[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri Apr 26 13:35:50 2024 +0200
+
+    botones editar solo en local
+
+[33mcommit 42f3319c281667722a2cc14e08cbc3bf27ffc678[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri Apr 26 13:21:38 2024 +0200
+
+    titulo
+
+[33mcommit 1d0204d53cdca07ce22868984b0de4f16cdc3475[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri Apr 26 13:15:38 2024 +0200
+
+    responsive
+
+[33mcommit 814cc9ea748453008bda8a890f170f20b4165d3f[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri Apr 26 12:38:03 2024 +0200
+
+    despliegue back
+
+[33mcommit 0e13c0c56015b58c864be9f655c9021cc1c80ac5[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri Apr 26 12:26:00 2024 +0200
+
+    render
+
+[33mcommit a1688aae0aa94ed17805ff2fcb9876de9eb33e81[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Wed Apr 24 12:58:41 2024 +0200
+
+    slider
+
+[33mcommit e7b0e7b972a205c6c16f1cf0d26eaa336d008079[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Mon Apr 22 12:55:34 2024 +0200
+
+    cambios estilos
+
+[33mcommit ecedd06b29c10e10204b6107f4237ff92a1dafa1[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Fri Apr 19 09:36:35 2024 +0200
+
+    socials
+
+[33mcommit 5974022e93e45fc1fd5c2a612633d1c3cbe77a91[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Wed Apr 17 21:28:27 2024 +0200
+
+    botones detalle
+
+[33mcommit 8d86886460625f5d802561272c0efe694c035273[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Mon Apr 15 21:32:13 2024 +0200
+
+    url vercel
+
+[33mcommit 9009e2e52ac2fe06e528328ee0d9d3d5b5b932ed[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Mon Apr 15 19:56:06 2024 +0200
+
+    url
+
+[33mcommit 66766d2e3ffa3c95b8e93aeb2ac6019a074e1a57[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Tue Apr 2 12:14:34 2024 +0200
+
+    cambio fondo
+
+[33mcommit f3774d1b158720e3d73ab62c9ad4847496181c7c[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Mon Apr 1 00:14:53 2024 +0200
+
+    arreglos responsive
+
+[33mcommit 430e140b2a516746525e118fcb8c50439bcd3062[m
+Author: Suzowy <suzowy@gmail.com>
+Date:   Sun Mar 31 23:29:55 2024 +0200
+
+    first commit

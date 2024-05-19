@@ -27,7 +27,6 @@ export class EditComponent implements OnInit {
   ) {
     this.title = 'Editar Proyecto';
     this.url = Global.url;
-    this.filesToUpload = [];
   }
 
   ngOnInit(): void {
@@ -67,6 +66,7 @@ export class EditComponent implements OnInit {
               )
               .then((result: any) => {
                 this.save_project = result.project;
+
                 this.status = 'success';
               });
           }
