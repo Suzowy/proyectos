@@ -1,6 +1,6 @@
 import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
       });
     }
   }
-  scrollToTopAndNavigate(projectId: string): void {
+  scrollToTopAndNavigate(projectId: string) {
     // Desplaza hacia arriba
     window.scrollTo({ top: 0, behavior: 'smooth' });
     // Navega al detalle del proyecto

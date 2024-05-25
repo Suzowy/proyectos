@@ -1,44 +1,225 @@
 <div class="container">
-<h2>Proyectos</h2>
-<div class="slider">
-  <ul class="galeria">
-    <li *ngFor="let project of projects" class="project">
-      <a [routerLink]="['/proyecto', project._id]">
-        <div class="image">
-          <img
-            [src]="url + '/get-image/' + project.image"
-            alt="Imagen de proyecto"
-            (error)="onImageError($event)"
-          >
-        </div>
-        <h3>{{ project.name }}</h3>
-      </a>
-    </li>
-  </ul>
-</div>
-</div>
-
-<div class="container2">
-    <h2><img src="assets/img/vision.png" alt="icono" class="flecha"> Todos mis proyectos</h2>
-
-    <ul>
+  <h2>Proyectos</h2>
+  <div class="slider">
+    <ul class="galeria">
       <li *ngFor="let project of projects" class="project">
-        <a
-          (click)="scrollToTopAndNavigate(project._id)"
-          [routerLink]="['/proyecto', project._id]">
+        <a [routerLink]="['/proyecto', project._id]">
           <div class="image">
-            <img
-              src="{{url+'/get-image/'+project.image}}"
-              *ngIf="project.image"
-              alt="Imagen de proyecto"
-              (error)="onImageError($event)"
-            >
+            <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img">
           </div>
           <h3>{{project.name}}</h3>
-          <p>{{project.category}}</p>
         </a>
       </li>
     </ul>
+  </div>
+</div>
+
+<div class="container2">
+  <h2><img src="assets/img/vision.png" alt="icono" class="flecha"> Todos mis proyectos</h2>
+
+  <ul>
+    <li *ngFor="let project of projects" class="project">
+      <a (click)="scrollToTopAndNavigate(project._id)" [routerLink]="['/proyecto', project._id]">
+        <div class="image">
+          <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img">
+          (error)="onImageError($event)">
+        </div>
+        <h3>{{project.name}}</h3>
+        <p>{{project.category}}</p>
+      </a>
+    </li>
+  </ul>
 
 </div>
 
+<!-- <div class="container2">
+  <h2><img src="assets/img/vision.png" alt="icono" class="flecha"> Todos mis proyectos</h2>
+
+  <ul>
+    <li class="project">
+
+      <div class="image">
+        <img src="../../../assets/img/responsive-maquetacion2.jpg" alt="Imagen de proyecto">
+      </div>
+      <h3>nombre</h3>
+      <p>descripcion</p>
+
+    </li>
+
+    <li class="project">
+
+      <div class="image">
+        <img src="../../../assets/img/pokedex.jpg" alt="Imagen de proyecto">
+      </div>
+      <h3>nombre</h3>
+      <p>descripcion</p>
+
+    </li>
+
+    <li class="project">
+
+      <div class="image">
+        <img src="../../../assets/img/responsive-maquetacion-porfolio.jpg" alt="Imagen de proyecto">
+      </div>
+      <h3>nombre</h3>
+      <p>descripcion</p>
+
+    </li>
+
+    <li class="project">
+
+      <div class="image">
+        <img src="../../../assets/img/responsive-maquetacion3.jpg" alt="Imagen de proyecto">
+      </div>
+      <h3>nombre</h3>
+      <p>descripcion</p>
+
+    </li>
+
+    <li class="project">
+
+      <div class="image">
+        <img src="../../../assets/img/rick&morthy.jpg" alt="Imagen de proyecto">
+      </div>
+      <h3>nombre</h3>
+      <p>descripcion</p>
+
+    </li>
+
+    <li class="project">
+
+      <div class="image">
+        <img src="../../../assets/img/rompecocos.jpg" alt="Imagen de proyecto">
+      </div>
+      <h3>nombre</h3>
+      <p>descripcion</p>
+
+    </li>
+
+    <li class="project">
+
+      <div class="image">
+        <img src="../../../assets/img/perretes.jpg" alt="Imagen de proyecto">
+      </div>
+      <h3>nombre</h3>
+      <p>descripcion</p>
+
+    </li>
+
+    <li class="project">
+
+      <div class="image">
+        <img src="../../../assets/img/responsive-proyecto-js.jpg" alt="Imagen de proyecto">
+      </div>
+      <h3>nombre</h3>
+      <p>descripcion</p>
+
+    </li>
+  </ul>
+
+</div>
+
+<div class="container3">
+  <h2><img src="assets/img/innovacion.png" alt="icono" class="flecha"> tecnologias utilizadas</h2>
+
+  <ul>
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/mongodb-wordmark.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/canva.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/angular.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/css.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/html5.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/nodejs.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/javascript.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/typescript.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/bootstrap.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/cloudinary.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/jquery.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/mysql.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/php.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/postman.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/react.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+
+    <li class="tecno">
+      <div class="log">
+        <img src="../../../assets/img/sass.svg" alt="Imagen de proyecto">
+      </div>
+    </li>
+  </ul>
+
+</div> -->
