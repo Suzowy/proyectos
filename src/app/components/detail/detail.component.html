@@ -3,15 +3,11 @@
 
   <div class="container" *ngIf="project">
     <div class="image" *ngIf="project.image">
-      <img [src]="url + '/get-image/' + project.image" alt="Imagen de proyecto"
+      <img src="{{ url + '/get-image/' + project.image.substring(8) }}" *ngIf="project.image" alt="img"
       (error)="onImageError($event)">
-
-
-
     </div>
   </div>
 </div>
-
 
 
   <div class="data"  *ngIf="project">

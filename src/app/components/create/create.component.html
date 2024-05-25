@@ -53,11 +53,11 @@
       <input type="file"  name="image"  (change)="fileChangeEvent($event)"/>
       <label class="form__label" for="image"></label>
       <span class="image" *ngIf="project.image" style="float: none">
-        <img src="{{url + '/get-image/' + project.image}}" alt="img" style="width: 100px;" />
+        <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img" style="width: 100px;">
       </span>
     </div>
 
-    
+
 
     <div class="form__group">
       <input type="submit" class="form__button" value="Enviar" [disabled]="!projectForm.form.valid" />
