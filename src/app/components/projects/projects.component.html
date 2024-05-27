@@ -5,7 +5,7 @@
       <li *ngFor="let project of projects" class="project">
         <a [routerLink]="['/proyecto', project._id]">
           <div class="image">
-            <img [src]="url + '/get-image/' + project.image" alt="Imagen de proyecto" (error)="onImageError($event)">
+            <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img" (error)="onImageError($event)">
           </div>
           <h3>{{ project.name }}</h3>
         </a>
@@ -21,7 +21,7 @@
     <li *ngFor="let project of projects" class="project">
       <a (click)="scrollToTopAndNavigate(project._id)" [routerLink]="['/proyecto', project._id]">
         <div class="image">
-          <img src="{{url+'/get-image/'+project.image}}" *ngIf="project.image" alt="Imagen de proyecto"
+          <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img"
             (error)="onImageError($event)">
         </div>
         <h3>{{project.name}}</h3>
@@ -30,9 +30,9 @@
     </li>
   </ul>
 
-</div> 
+</div>
 
-<div class="container2">
+<!-- <div class="container2">
   <h2><img src="assets/img/vision.png" alt="icono" class="flecha"> Todos mis proyectos</h2>
 
   <ul>
@@ -117,7 +117,7 @@
     </li>
   </ul>
 
-</div>
+</div> -->
 
 <div class="container3">
   <h2><img src="assets/img/innovacion.png" alt="icono" class="flecha"> tecnologias utilizadas</h2>
