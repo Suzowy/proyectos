@@ -5,7 +5,11 @@
       <li *ngFor="let project of projects" class="project">
         <a [routerLink]="['/proyecto', project._id]">
           <div class="image">
-            <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img" (error)="onImageError($event)">
+            <img
+              [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
+              *ngIf="project.image"
+              alt="img"
+              (error)="onImageError($event)">
           </div>
           <h3>{{ project.name }}</h3>
         </a>
@@ -21,7 +25,10 @@
     <li *ngFor="let project of projects" class="project">
       <a (click)="scrollToTopAndNavigate(project._id)" [routerLink]="['/proyecto', project._id]">
         <div class="image">
-          <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img"
+          <img
+            [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
+            *ngIf="project.image"
+            alt="img"
             (error)="onImageError($event)">
         </div>
         <h3>{{project.name}}</h3>

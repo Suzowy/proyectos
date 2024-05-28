@@ -13,54 +13,52 @@
 
 
     <div class="form__group">
-      <input type="text" class="form__input" name="name" #name="ngModel" [(ngModel)]="project.name" required placeholder="Nombre" />
+      <input type="text" class="form__input" name="name" #name="ngModel" [(ngModel)]="project.name" required
+        placeholder="Nombre" />
       <label class="form__label" for="name">Nombre</label>
       <span class="formError" *ngIf="name.touched && !name.valid">El nombre es obligatorio</span>
     </div>
 
 
     <div class="form__group">
-      <textarea class="form__input" name="description" #description="ngModel" [(ngModel)]="project.description" required placeholder="Descripción"></textarea>
+      <textarea class="form__input" name="description" #description="ngModel" [(ngModel)]="project.description" required
+        placeholder="Descripción"></textarea>
       <label class="form__label" for="description">Descripción</label>
       <span class="formError" *ngIf="description.touched && !description.valid">La descripción es obligatoria</span>
     </div>
 
 
     <div class="form__group">
-      <input type="text" class="form__input" name="category" #category="ngModel" [(ngModel)]="project.category" required placeholder="Categoria" />
+      <input type="text" class="form__input" name="category" #category="ngModel" [(ngModel)]="project.category" required
+        placeholder="Categoria" />
       <label class="form__label" for="category">Categoría</label>
       <span class="formError" *ngIf="category.touched && !category.valid">La categoría es obligatoria</span>
     </div>
 
 
     <div class="form__group">
-      <input type="number" class="form__input" name="year" #year="ngModel" [(ngModel)]="project.year"  />
+      <input type="number" class="form__input" name="year" #year="ngModel" [(ngModel)]="project.year" />
       <label class="form__label" for="year"></label>
     </div>
 
     <div class="form__group">
-      <input type="text" class="form__input" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required placeholder="Lenguajes" />
+      <input type="text" class="form__input" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required
+        placeholder="Lenguajes" />
       <label class="form__label" for="langs">Lenguajes</label>
       <span class="formError" *ngIf="langs.touched && !langs.valid">Los lenguajes son obligatorios</span>
     </div>
 
     <div class="form__group">
-      <input type="text" class="form__input" name="http" #http="ngModel" [(ngModel)]="project.http" required placeholder="URL" />
+      <input type="text" class="form__input" name="http" #http="ngModel" [(ngModel)]="project.http" required
+        placeholder="URL" />
       <label class="form__label" for="http">Enlace página</label>
     </div>
 
     <div class="form__group">
-      <input type="file"  name="image"  (change)="fileChangeEvent($event)"/>
-      <label class="form__label" for="image"></label>
-      <span class="image" *ngIf="project.image" style="float: none">
-        <img src="{{url+'/get-image/'+project.image.substring(8)}}" *ngIf="project.image" alt="img" style="width: 100px;">
-      </span>
-    </div>
-
-
-
-    <div class="form__group">
-      <input type="submit" class="form__button" value="Enviar" [disabled]="!projectForm.form.valid" />
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <input type="file" (change)="fileChangeEvent($event)" multiple>
+        <button type="submit">Upload</button>
+      </form>
     </div>
 
   </form>

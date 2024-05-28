@@ -2,39 +2,44 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
-import { Router, ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrl:'./detail.component.css',
+  styleUrls: ['./detail.component.css'],
   providers: [ProjectService]
 })
 export class DetailComponent implements OnInit {
   public url: string;
   public project!: Project;
   public confirm: boolean;
+  public cloudinaryCloudName: string = environment.cloudinary.cloudName;
 
   constructor(
-  	private _projectService: ProjectService,
-  	private _router: Router,
-  	private _route: ActivatedRoute
-
-  ){
-  	this.url = Global.url;
+    private _projectService: ProjectService,
+    private _router: Router,
+    private _route: ActivatedRoute
+  ) {
+    this.url = Global.url;
     this.confirm = false;
   }
 
+  ngOnInit(): void {
+    this._route.params.subscribe(params => {
+      let id = params['id'];
+      this.getProject(id);
+    });
+  }
 
   getProject(id: any) {
     this._projectService.getProject(id).subscribe(
       response => {
-        this.project = response.project
-
+        this.project = response.project;
       },
-      (error:any) => {
+      (error: any) => {
         console.log(error);
-
       }
     );
   }
@@ -44,31 +49,20 @@ export class DetailComponent implements OnInit {
     target.src = 'assets/img/not-found.png';
   }
 
-
-   ngOnInit(): void{
-  	this._route.params.subscribe(params => {
-  		let id = params['id'];
-
-  		this.getProject(id);
-  	});
-  }
-
-  setConfirm(confirm: boolean){
+  setConfirm(confirm: boolean) {
     this.confirm = confirm;
   }
 
-
-  deleteProject(id: string){
-  	this._projectService.deleteProject(id).subscribe(
-  		response => {
-  			if(response.project){
-  				this._router.navigate(['/proyectos']);
-  			}
-  		},
-  		error => {
-  			console.log(<any>error);
-  		}
-  	);
+  deleteProject(id: string) {
+    this._projectService.deleteProject(id).subscribe(
+      response => {
+        if (response.project) {
+          this._router.navigate(['/proyectos']);
+        }
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
-
 }

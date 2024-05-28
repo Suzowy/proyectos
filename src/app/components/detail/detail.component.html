@@ -2,9 +2,12 @@
   <h2>Detalle del proyecto</h2>
 
   <div class="container" *ngIf="project">
-    <div class="image" *ngIf="project.image">
-      <img src="{{ url + '/get-image/' + project.image.substring(8) }}" *ngIf="project.image" alt="img"
-      (error)="onImageError($event)">
+    <div class="image">
+      <img
+        [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
+        *ngIf="project.image"
+        alt="img"
+        (error)="onImageError($event)">
     </div>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
+import { environment } from '../../../environments/environment';
 declare var $: any;
 
 @Component({
@@ -11,14 +12,11 @@ declare var $: any;
   providers: [ProjectService]
 })
 export class ProjectsComponent implements OnInit, AfterViewChecked {
-  onImageError(event: Event) {
-    const target = event.target as HTMLImageElement;
-    target.src = 'assets/img/not-found.png';
-  }
   public projects: Project[] = [];
   public url: string;
   public showAllProjects: boolean = false;
   public projectsLoaded: boolean = false;
+  public cloudinaryCloudName: string = environment.cloudinary.cloudName;
   router: any;
 
   constructor(private _projectService: ProjectService) {
@@ -47,8 +45,10 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
     }
   }
 
-
-
+  onImageError(event: Event) {
+    const target = event.target as HTMLImageElement;
+    target.src = 'assets/img/not-found.png';
+  }
 
   getProjects() {
     this._projectService.getProjects().subscribe(
@@ -63,11 +63,8 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
     );
   }
 
-
   scrollToTopAndNavigate(projectId: string): void {
-    // Desplaza hacia arriba
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Navega al detalle del proyecto
     this.router.navigate(['/proyecto', projectId]);
   }
 }
