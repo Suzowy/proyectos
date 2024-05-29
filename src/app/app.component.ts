@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
   router: any;
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
+
+
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.closeMenuOnClick();
