@@ -6,7 +6,7 @@ import { Global } from "./global";
 
 @Injectable()
 export class ProjectService {
-  private url: string;
+  public url: string;
 
   constructor(
     public _http: HttpClient
