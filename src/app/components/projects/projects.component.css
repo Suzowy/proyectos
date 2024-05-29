@@ -204,11 +204,15 @@ p {
   .container,
   .container2,
   .container3 {
-    width: 90%;
+    width: 95%;
   }
 
   .container2 .project {
-    width: 90%;
+    width: 100%;
+    margin-left: -6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
   }
 
   .container2 h2 {
