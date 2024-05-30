@@ -53,7 +53,8 @@ export class DetailComponent implements OnInit {
     this.confirm = confirm;
   }
 
-  deleteProject(id: string) {
+  deleteProject(id: string): void {
+    if (this.project) {
     this._projectService.deleteProject(id).subscribe(
       response => {
         if (response.project) {
@@ -65,4 +66,5 @@ export class DetailComponent implements OnInit {
       }
     );
   }
+}
 }
