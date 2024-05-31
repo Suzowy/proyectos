@@ -10,7 +10,7 @@ import { Global } from "./global";
 export class ProjectService {
   public url: string;
 
-  constructor(private _http: HttpClient) {
+  constructor(public _http: HttpClient) {
     this.url = Global.url;
   }
 
