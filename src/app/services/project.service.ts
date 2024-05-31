@@ -4,13 +4,13 @@ import { Observable } from 'rxjs';
 import { Project } from './../models/project';
 import { Global } from "./global";
 
-@Injectable()
+@Injectable(
+  {providedIn: 'root'}
+)
 export class ProjectService {
   public url: string;
 
-  constructor(
-    public _http: HttpClient
-  ) {
+  constructor(private _http: HttpClient) {
     this.url = Global.url;
   }
 
