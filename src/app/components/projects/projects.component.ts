@@ -3,6 +3,8 @@ import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router'; // Import Router
+
 declare var $: any;
 
 @Component({
@@ -17,9 +19,11 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
   public showAllProjects: boolean = false;
   public projectsLoaded: boolean = false;
   public cloudinaryCloudName: string = environment.cloudinary.cloudName;
-  router: any;
 
-  constructor(private _projectService: ProjectService) {
+  constructor(
+    private _projectService: ProjectService,
+    private router: Router // Inject Router
+  ) {
     this.url = Global.url;
   }
 
@@ -64,6 +68,7 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
   }
 
   scrollToTopAndNavigate(projectId: string): void {
+    console.log(`Navigating to project with ID: ${projectId}`); // Log ID
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.router.navigate(['/proyecto', projectId]);
   }
