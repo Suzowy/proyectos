@@ -2,7 +2,7 @@
   width: 70%;
   height: auto;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   display: block;
 }
 
@@ -29,6 +29,7 @@
   float: left;
   width: 90%;
   margin-left: 20px;
+  margin-bottom: 100px;
   padding: 30px;
   text-align: justify;
 }

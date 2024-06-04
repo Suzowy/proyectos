@@ -83,15 +83,15 @@
   margin: 0 auto;
   /* text-align: center; */
   margin-top: 100px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
   list-style: none;
 
 }
 
 
 .container3 .tecno {
-  width: 5%;
-  height: 40px;
+  width: 7%;
+  height: 50px;
   border-top-left-radius: 30px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 30px;
@@ -146,7 +146,7 @@
 }
 
 .container4 .formacion{
-  width:70%;
+  width:35%;
   height: auto;
   border-top-left-radius: 30px;
   border-top-right-radius: 0px;
@@ -161,6 +161,7 @@
 
   padding: 10px;
   margin: 30px;
+  transition:500ms ease-out;
 }
 
 .formacion img{
@@ -170,6 +171,15 @@ border-top-left-radius: 30px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 0;
+
+}
+
+.container4 .formacion:hover {
+  border-color: #fed7be;
+  background: white;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  filter: opacity(100%);
+  transform: scale(1.1);
 }
 
 .container4 ul{
@@ -227,10 +237,23 @@ p {
     width: 35%;
     height: auto;
   }
+  .container4 .formacion{
+    width: 100%;
+      margin-left: -6px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding: 5px;
+  }
+  .container4 .formacion:hover {
+    transform: scale(0.95);
+  }
+
 }
 
 /* Media query para ajustar el diseño en pantallas más pequeñas */
 @media (max-width: 768px) {
+
+
   .container2 .project {
     width: 95%;
     margin: 0px auto;
@@ -245,6 +268,7 @@ p {
   .slider .project img {
     height: auto;
   }
+
 }
 
 @media (max-width: 480px) {

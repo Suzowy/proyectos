@@ -70,6 +70,6 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
   scrollToTopAndNavigate(projectId: string): void {
     console.log(`Navigating to project with ID: ${projectId}`); // Log ID
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    this.router.navigate(['/proyecto', projectId]);
+    this.router.navigate(['/proyecto/', projectId]);
   }
 }
