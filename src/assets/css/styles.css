@@ -13,6 +13,11 @@
 /* Estilos generales */
 html {
   scroll-behavior: smooth;
+  background: url("../img/fondo1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 * {
@@ -25,12 +30,6 @@ body {
   font-size: 20px;
   margin: 0;
   padding: 0;
-  background: url("../img/fondo1.jpg");
-  /* fondo fijado */
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 /* Barra de navegacion/cabecera */
