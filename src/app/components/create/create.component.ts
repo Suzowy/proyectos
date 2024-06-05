@@ -1,14 +1,15 @@
-
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { UploadService } from '../../services/upload.service';
 import { Global } from '../../services/global';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrl: './create.component.css',
+  styleUrls: ['./create.component.css'],
   providers: [ProjectService, UploadService]
 })
 export class CreateComponent implements OnInit {
@@ -22,7 +23,9 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private _projectService: ProjectService,
-    public _uploadService: UploadService
+    public _uploadService: UploadService,
+    private _authService: AuthService,
+    private router: Router
   ) {
     this.title = "crear proyecto";
     this.project = new Project('', '', '', '', new Date().getFullYear(), '', '');
@@ -32,44 +35,39 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit(form: any) {
-
-    //guardar los datos
-    this._projectService.saveProject(this.project).subscribe(
-      response => {
-        if (response.project) {
-
-
-          //subir la imagen
-          this._uploadService.makeFileRequest(
-            `${Global.url}/upload-image/${response.project._id}`,
-            [],
-            this.filesToUpload,
-            'image'
-          ).then((result: any) => {
-            this.save_project = result.project;
-            this.status = "success";
-            console.log(result);
-
-            form.reset();
-          }).catch(error => {
-            console.error("Error al subir la imagen:", error);
+    if (this._authService.isLoggedIn()) {
+      this._projectService.saveProject(this.project).subscribe(
+        response => {
+          if (response.project) {
+            this._uploadService.makeFileRequest(
+              `${Global.url}/upload-image/${response.project._id}`,
+              [],
+              this.filesToUpload,
+              'image'
+            ).then((result: any) => {
+              this.save_project = result.project;
+              this.status = "success";
+              console.log(result);
+              form.reset();
+            }).catch(error => {
+              console.error("Error al subir la imagen:", error);
+              this.status = "failed";
+            });
+          } else {
             this.status = "failed";
-          });
-
-
-        } else {
-          this.status = "failed";
+          }
+        },
+        error => {
+          console.log(<any>error);
         }
-
-      },
-      error => {
-        console.log(<any>error);
-      }
-    )
+      );
+    } else {
+      // El usuario no está autenticado, redirigir al formulario de login
+      this.router.navigate(['/login']);
+    }
   }
 
   fileChangeEvent(fileInput: any) {
     this.filesToUpload = <Array<File>>fileInput.target.files;
   }
-
 }

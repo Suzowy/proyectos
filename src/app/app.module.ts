@@ -16,7 +16,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TitleComponent } from './components/title/title.component';
-
+import { AuthModule } from './components/auth/auth.module';
 
 
 @NgModule({

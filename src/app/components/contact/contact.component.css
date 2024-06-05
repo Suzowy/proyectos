@@ -43,10 +43,12 @@
   box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.277);
 }
 
-.email-link {
-  text-decoration: none;
-  color:#37404f;
+.email-link,
+.telegram-link {
+  font-style: oblique;
+  color: #607b99;
 }
+
 
 .h2-form {
   font-size: 20px;
