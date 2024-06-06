@@ -1,11 +1,12 @@
 
+
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule , provideHttpClient, withFetch } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule} from './app-routing.module';
-
+import { AuthModule } from './components/auth/auth.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
@@ -16,7 +17,9 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TitleComponent } from './components/title/title.component';
-import { AuthModule } from './components/auth/auth.module';
+
+import { HeaderComponent } from './components/header/header.component';
+
 
 
 @NgModule({
@@ -30,7 +33,8 @@ import { AuthModule } from './components/auth/auth.module';
     DetailComponent,
     EditComponent,
     FooterComponent,
-    TitleComponent
+    TitleComponent,
+    HeaderComponent
 
   ],
   imports: [
@@ -38,6 +42,8 @@ import { AuthModule } from './components/auth/auth.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    AuthModule
 
 
   ],

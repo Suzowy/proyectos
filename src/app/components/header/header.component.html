@@ -1,0 +1,23 @@
+<header>
+  <button class="menu-toggle" aria-label="Toggle Menu">
+    <span>menu</span>
+  </button>
+  <ul>
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#projects">Proyectos</a></li>
+    <li class="logo"><a href="#content">SC</a></li>
+     <li><a href="#contact">Contacto</a></li>
+
+     <li *ngIf="isLoggedIn">
+      <a (click)="scrollToTopAndNavigate('/crear-proyecto')" [routerLink]="['/crear-proyecto']"
+        [routerLinkActive]="['actived']">Crear proyecto</a></li>
+
+    <li *ngIf="!isLoggedIn">
+      <a (click)="scrollToTopAndNavigate('/login')" [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a>
+    </li>
+    <li> <span *ngIf="username">Bienvenido, {{ username }}</span></li>
+    <li *ngIf="isLoggedIn">
+      <a (click)="logout()">Salir</a>
+    </li>
+  </ul>
+</header>

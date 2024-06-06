@@ -8,6 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+isLoggedIn: any;
   title(_title: any) {
     throw new Error('Method not implemented.');
   }

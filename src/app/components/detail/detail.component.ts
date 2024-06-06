@@ -1,9 +1,12 @@
+// detail.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
 import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-detail',
@@ -16,11 +19,13 @@ export class DetailComponent implements OnInit {
   public project!: Project;
   public confirm: boolean;
   public cloudinaryCloudName: string = environment.cloudinary.cloudName;
+  public isLoggedIn: boolean = false;
 
   constructor(
     private _projectService: ProjectService,
     private _router: Router,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _authService: AuthService
   ) {
     this.url = Global.url;
     this.confirm = false;
@@ -30,6 +35,10 @@ export class DetailComponent implements OnInit {
     this._route.params.subscribe(params => {
       let id = params['id'];
       this.getProject(id);
+    });
+
+    this._authService.isLoggedIn().subscribe((loggedIn: boolean) => {
+      this.isLoggedIn = loggedIn;
     });
   }
 
@@ -55,16 +64,16 @@ export class DetailComponent implements OnInit {
 
   deleteProject(id: string): void {
     if (this.project) {
-    this._projectService.deleteProject(id).subscribe(
-      response => {
-        if (response.project) {
-          this._router.navigate(['/proyectos']);
+      this._projectService.deleteProject(id).subscribe(
+        response => {
+          if (response.project) {
+            this._router.navigate(['/proyectos']);
+          }
+        },
+        error => {
+          console.log(error);
         }
-      },
-      error => {
-        console.log(error);
-      }
-    );
+      );
+    }
   }
-}
 }
