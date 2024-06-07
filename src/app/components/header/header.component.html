@@ -9,15 +9,17 @@
      <li><a href="#contact">Contacto</a></li>
 
      <li *ngIf="isLoggedIn">
-      <a (click)="scrollToTopAndNavigate('/crear-proyecto')" [routerLink]="['/crear-proyecto']"
+      <a (click)="scrollAndNavigate('/crear-proyecto')" [routerLink]="['/crear-proyecto']"
         [routerLinkActive]="['actived']">Crear proyecto</a></li>
 
-    <li *ngIf="!isLoggedIn">
-      <a (click)="scrollToTopAndNavigate('/login')" [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a>
-    </li>
-    <li> <span *ngIf="username">Bienvenido, {{ username }}</span></li>
-    <li *ngIf="isLoggedIn">
-      <a (click)="logout()">Salir</a>
-    </li>
+       <li *ngIf="!isLoggedIn && !username">
+  <a (click)="scrollToTopAndNavigate('/login')" [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a>
+</li>
+<li *ngIf="isLoggedIn">
+  <span>Bienvenido, {{ username }}</span>
+</li>
+<li *ngIf="isLoggedIn">
+  <a (click)="logout()">Salir</a>
+</li>
   </ul>
 </header>

@@ -1,17 +1,14 @@
-
 <app-header></app-header>
 
-<section id="content">
+<section id="crear-proyecto" *ngIf="isLoggedIn">
+  <app-create></app-create>
+</section>
 
-  <section id="crear-proyecto" *ngIf="isLoggedIn">
-    <app-create></app-create>
-  </section>
+<section id="content">
 
   <section id="title">
     <router-outlet></router-outlet>
   </section>
-
-
 
   <section id="about">
     <app-about></app-about>
@@ -24,8 +21,6 @@
   <section id="contact">
     <app-contact></app-contact>
   </section>
-
-
 </section>
 
 <app-footer></app-footer>

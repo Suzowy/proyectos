@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router,  NavigationEnd } from '@angular/router';
@@ -20,10 +19,10 @@ export class HeaderComponent implements OnInit {
       this.isLoggedIn = loggedIn;
       this.username = this.authService.getUsername();
 
-      // Redirige al usuario a la página "Crear proyecto" si estaba intentando acceder a ella antes de iniciar sesión
-      if (loggedIn && this.router.url.includes('/crear-proyecto')) {
-        this.router.navigate(['/crear-proyecto']);
-      }
+
+      // if (loggedIn && this.router.url.includes('/crear-proyecto')) {
+      //   this.router.navigate(['/crear-proyecto']);
+      // }
     });
 
     // Maneja los eventos de cambio de ruta para actualizar el estado de inicio de sesión
@@ -33,6 +32,9 @@ export class HeaderComponent implements OnInit {
         this.authService.checkLoginStatus();
       }
     });
+
+
+
   }
 
   logout(): void {
@@ -43,5 +45,10 @@ export class HeaderComponent implements OnInit {
   scrollToTopAndNavigate(projectId: string) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.router.navigate(['/login']);
+  }
+
+  scrollAndNavigate(projectId: string) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.router.navigate(['/crear-proyecto']);
   }
 }

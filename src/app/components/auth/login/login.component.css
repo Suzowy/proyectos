@@ -46,19 +46,11 @@
   box-sizing: border-box;
 }
 
-button {
+ button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
 
 .error-message {
   color: red;
@@ -70,8 +62,8 @@ button:hover {
 
 
   .login-container {
-    width: 340px;
-    margin-left: -45px;
+    width: 320px;
+    margin-left: -40px;
 }
 
 }
