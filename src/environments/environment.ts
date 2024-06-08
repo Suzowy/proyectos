@@ -1,6 +1,10 @@
 export const environment = {
-  production: true,
+  production: false,
   cloudinary: {
     cloudName: 'dzytii7jv'
+  },
+  authCredentials: {
+    username: 'SorCas',
+    password: 'Currupipi'
   }
 };

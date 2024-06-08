@@ -3,5 +3,9 @@ export const environment = {
 
   cloudinary: {
     cloudName: 'dzytii7jv'
+  },
+  authCredentials: {
+    username: 'SorCas',
+    password: 'Currupipi'
   }
 };

@@ -36,13 +36,16 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
       $('.galeria').bxSlider({
         adaptiveHeight: true,
         auto: true,
-        autoControls: true,
-        stopAutoOnClick: true,
-        pager: true,
-        slideWidth: 600,
+        // autoControls: true,
+        // stopAutoOnClick: true,
+        // pager: true,
+        controls: false,
+        touchEnabled: true,
+        slideWidth: 800,
         responsive: true,
         pause: 5000,
-        speed: 1000,
+        speed: 2000,
+    
         easing: "ease-in-out"
       });
       this.projectsLoaded = true;

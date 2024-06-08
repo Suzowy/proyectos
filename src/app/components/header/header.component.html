@@ -22,7 +22,7 @@
   <a (click)="scrollToTopAndNavigate('/login')" [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a>
 </li>
 <li *ngIf="isLoggedIn">
-  <span>Bienvenido, {{ username }}</span>
+  <span>Bienvenida, {{ username }}</span>
 </li>
 <li *ngIf="isLoggedIn">
   <a (click)="logout()">Salir</a>

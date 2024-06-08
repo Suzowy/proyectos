@@ -153,7 +153,7 @@ form input[disabled]:hover {
 @media (max-width: 768px) {
 
   #content {
-    width: 95%;
+    width: 100%;
   }
 
   h2 {

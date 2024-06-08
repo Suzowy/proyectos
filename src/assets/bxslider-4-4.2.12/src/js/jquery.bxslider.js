@@ -10,6 +10,7 @@
   var defaults = {
 
     // GENERAL
+
     mode: 'horizontal',
     slideSelector: '',
     infiniteLoop: true,
