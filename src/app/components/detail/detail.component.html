@@ -19,11 +19,9 @@
     <p>categoría: {{ project.category }}</p>
     <p>Tecnologías utilizadas: {{ project.langs }}</p>
     <a href="{{ project.http }}" target="_blank">
-      <img src="assets/img/proyectos.png" alt="Descripción de la imagen" class="flecha" />
       Click para ver el proyecto.
     </a><br>
     <a [routerLink]="['/proyectos']">
-      <img src="assets/img/atras.png" alt="Descripción de la imagen" class="atras" />
       Volver a proyectos
     </a>
   </div>

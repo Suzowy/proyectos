@@ -5,6 +5,7 @@ import { Global } from '../../services/global';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router'; // Import Router
 
+
 declare var $: any;
 
 @Component({
@@ -45,7 +46,7 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
         responsive: true,
         pause: 5000,
         speed: 2000,
-    
+
         easing: "ease-in-out"
       });
       this.projectsLoaded = true;

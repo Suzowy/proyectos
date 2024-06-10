@@ -6,10 +6,8 @@
         <a [routerLink]="['/proyecto', project._id]">
           <div class="image">
             <img
-            [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
-            *ngIf="project.image"
-            alt="img"
-            (error)="onImageError($event)">
+              [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
+              *ngIf="project.image" alt="img" (error)="onImageError($event)">
           </div>
           <!-- <h3>{{ project.name }}</h3> -->
         </a>
@@ -18,18 +16,15 @@
   </div>
 </div>
 
- <div class="container2">
-  <h2><img src="assets/img/vision.png" alt="icono" class="flecha"> Todos mis proyectos</h2>
+<div class="container2">
+  <h2><img src="assets/img/dev.png" alt="icono" class="flecha"> Todos mis proyectos</h2>
 
   <ul>
     <li *ngFor="let project of projects" class="project">
       <a (click)="scrollToTopAndNavigate(project._id)" [routerLink]="['/proyecto/', project._id]">
         <div class="image">
-          <img
-            [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
-            *ngIf="project.image"
-            alt="img"
-            (error)="onImageError($event)">
+          <img [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
+            *ngIf="project.image" alt="img" (error)="onImageError($event)">
         </div>
         <h3>{{project.name}}</h3>
         <!-- <p>{{project.category}}</p> -->
@@ -147,32 +142,115 @@
 </div>
 
 <div class="container4">
-  <h2><img src="assets/img/educacion-en-linea.png" alt="icono" class="flecha">Formación</h2>
+  <h2><img src="assets/img/educacion-en-linea.png" alt="icono" class="flecha"> Formación</h2>
 
-  <ul>
-    <li class="formacion">
-      <div class="image">
-        <img src="assets/img/2024-05-30 20 27 48.jpg" alt="Imagen de proyecto">
-      </div>
-    </li>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="false" aria-controls="collapseOne">
+          Upgrade Hub
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="certificado">
+            <img src="assets/img/2024-05-30 20 27 48.jpg" alt="Imagen de proyecto">
+          </div>
 
-    <li class="formacion">
-      <div class="image">
-        <img src="assets/img/certificado css.jpg" alt="Imagen de proyecto">
-      </div>
-    </li>
+          <h3><strong>Trabajo en equipo y Git:</strong></h3>
+          <p>Dominio de <strong>Git Flow</strong> para un control de versiones eficiente en entornos colaborativos.</p>
 
-    <li class="formacion">
-      <div class="image">
-        <img src="assets/img/certificado css3 avanzado.jpg" alt="Imagen de proyecto">
-      </div>
-    </li>
+          <h3><strong>Desarrollo Frontend:</strong></h3>
+          <p><strong>HTML5 y CSS3:</strong> Creación de páginas web semánticas, maquetación, comprensión del flujo de
+            renderizado y diseño responsive.</p>
+          <p><strong>JavaScript:</strong> Profundización en JavaScript para maximizar el rendimiento en proyectos
+            reales.</p>
+          <p><strong>Frameworks:</strong> Trabajo con Angular y React.</p>
 
-    <li class="formacion">
-      <div class="image">
-        <img src="assets/img/certificado javaScript.jpg" alt="Imagen de proyecto">
+          <h3><strong>Desarrollo Backend:</strong></h3>
+          <p><strong>PHP:</strong> Introducción a PHP moderno con énfasis en clean code y principios SOLID.</p>
+          <p><strong>Symfony:</strong> Uso de uno de los frameworks más populares para el desarrollo de aplicaciones
+            web.</p>
+          <p><strong>Node.js:</strong> Aplicación de JavaScript en el backend para crear APIs Restful, interacción con
+            MongoDB y securización de aplicaciones.</p>
+
+          <h3><strong>Bases de datos:</strong></h3>
+          <p><strong>Relacionales:</strong> Conceptos y práctica con MySQL.</p>
+          <p><strong>NoSQL:</strong> Exploración de bases de datos NoSQL para complementar el conocimiento en BBDD.</p>
+
+          <h3><strong>API y Servidores:</strong></h3>
+          <p><strong>API Rest:</strong> Desarrollo de una API Rest siguiendo la metodología "Learning by doing".</p>
+          <p><strong>Server Tools:</strong> Gestión de dependencias, configuración de IDE, git hooks, y uso de Docker y
+            Docker Compose para crear entornos virtualizados.</p>
+
+
+          <h3><strong>Proyectos y Aplicaciones:</strong></h3>
+          <p><strong>Aplicación Full Stack:</strong> Desarrollo de una aplicación web Full Stack como primer gran
+            proyecto individual.</p>
+          <p><strong>Proyecto en equipo:</strong> Creación de una aplicación real en grupo para poner a prueba
+            habilidades técnicas y metodológicas en un entorno profesional.</p>
+        </div>
+
       </div>
-    </li>
-  </ul>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+          aria-expanded="false" aria-controls="collapseTwo">
+          Udemy
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+
+          <h3><strong>Máster en CSS</strong></h3>
+          <p>He adquirido un dominio sólido en las tecnologías de front-end más importantes. Tengo la capacidad de crear
+            páginas web con diseños atractivos y responsivos.</p>
+          <p>He aprendido a utilizar HTML y CSS para estructurar y estilizar contenido web, aplicando técnicas avanzadas
+            como SASS y LESS para optimizar mi flujo de trabajo.</p>
+          <p>Además, estoy familiarizado con Flexbox y CSS Grid Layout, lo que me permite crear diseños flexibles y
+            adaptables a diferentes dispositivos y tamaños de pantalla.</p>
+        </div>
+        <div class="image">
+          <img src="assets/img/certificado css.jpg" alt="Imagen de proyecto">
+        </div>
+        <br>
+        <div class="accordion-body">
+
+          <h3><strong>Máster CSS3 Avanzado</strong></h3>
+          <p>Este curso me ha proporcionado conocimiento de <strong>HTML5, CSS y CSS3</strong>, permitiéndome
+            implementar diseños complejos y efectos visuales en mis proyectos.</p>
+          <p>Aprendí a utilizar <strong>Flexbox y CSS Grid Layout</strong> de manera avanzada, lo que me permite crear
+            diseños altamente flexibles y responsivos para adaptarse a cualquier dispositivo o pantalla.</p>
+          <p>El curso me introdujo en la <strong>metodología BEM</strong> para escribir CSS de manera más eficiente y
+            escalable, así como en el desarrollo de animaciones avanzadas para crear experiencias de usuario dinámicas.
+          </p>
+        </div>
+        <div class="image">
+          <img src="assets/img/certificado css3 avanzado.jpg" alt="Imagen de proyecto">
+        </div>
+
+        <br>
+        <div class="accordion-body">
+
+          <h3><strong>Máster en JavaScript</strong></h3>
+          <p>Capacidad de desarrollar proyectos web front-end y back-end de manera más profesional y escalable.</p>
+          <p>A lo largo del curso, aprendí desde los fundamentos de la programación hasta conceptos avanzados como
+            <strong>Programación Orientada a Objetos</strong> (POO) en JavaScript y el desarrollo de aplicaciones web
+            SPA con Angular.</p>
+          <p>He adquirido conocimientos en <strong>jQuery, TypeScript, Angular, NodeJS, ExpressJS y MongoDB</strong>, lo
+            que me permite crear aplicaciones web modernas y completas utilizando el MEAN Stack.</p>
+          <p>Además, el curso me proporcionó las habilidades necesarias para maquetar sitios web de manera efectiva y
+            crear interfaces de usuario dinámicas y atractivas.</p>
+          <div class="image">
+            <img src="assets/img/certificado javaScript.jpg" alt="Imagen de proyecto">
+          </div><br>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 
 </div>

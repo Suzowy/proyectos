@@ -1,5 +1,5 @@
 .container1 {
-  width: 70%;
+  width: 90%;
   height: auto;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -25,11 +25,9 @@
 }
 
 .data {
-
-  float: left;
   width: 90%;
   margin-left: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   padding: 30px;
   text-align: justify;
 }
@@ -103,7 +101,7 @@ a:hover {
   margin-bottom: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  width:55px;
+  width:80px;
   font-weight: 800;
   height: auto;
   font-size: 20px;

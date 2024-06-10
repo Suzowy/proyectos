@@ -5,6 +5,14 @@
   margin: 0px auto;
   margin-bottom: 20px;
   font-size: 23px;
+
+}
+
+.flecha {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .about p {

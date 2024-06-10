@@ -27,6 +27,13 @@
   padding: 0 15px;
 }
 
+.flecha {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
 .icon {
   width: 40px;
   height: 40px;
@@ -91,7 +98,7 @@
   font-family: "yayou";
   position: relative;
   width: 80%;
-  height: 20px;
+  height: 40px;
   display: block;
   border: 2px solid #ccc;
   border-radius: 0.5rem;
@@ -188,7 +195,7 @@
 
   .map {
     width: 104%;
-    margin-left: -15px;
+    margin-left: 10px;
     height: auto;
   }
 
@@ -202,11 +209,11 @@
 @media (max-width: 585px) {
 
   .container {
-    width: 90%;
+    width: 95%;
   }
 
   .data {
-    margin-left: -18px;
+    margin-left: 29px;
     width: 100%;
     margin-bottom: 1.5rem;
     padding: 0.5rem 0.5rem;

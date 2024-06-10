@@ -36,11 +36,13 @@
             ],
             "styles": [
               "src/assets/css/styles.css",
-              "src/assets/bxslider-4-4.2.12/dist/jquery.bxslider.min.css"
+              "src/assets/bxslider-4-4.2.12/dist/jquery.bxslider.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-             "node_modules/jquery/dist/jquery.min.js",
-             "src/assets/bxslider-4-4.2.12/dist/jquery.bxslider.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/bxslider-4-4.2.12/dist/jquery.bxslider.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
