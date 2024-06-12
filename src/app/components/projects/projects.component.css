@@ -6,6 +6,10 @@
   margin-bottom: 20px;
 }
 
+.container h2{
+  border-bottom: none;
+}
+
 .slider {
   width:100%;
   height:auto;
@@ -237,7 +241,7 @@ p {
     width: 100%;
     margin-left: -15px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .accordion img {
