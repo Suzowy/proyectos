@@ -1,10 +1,11 @@
 /* sobre mi */
 
 .about {
+  font-family: "yanone";
   width: 70%;
   margin: 0px auto;
   margin-bottom: 20px;
-  font-size: 23px;
+  font-size: 20px;
 
 }
 
@@ -26,10 +27,10 @@
 @media (max-width: 585px) {
 
 .about{
-  width: 90%;
+  width: 95%;
 
 }
 .about p {
-  font-size: 20px;
+  font-size: 16px;
 }
 }

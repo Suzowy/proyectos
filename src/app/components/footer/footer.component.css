@@ -1,5 +1,6 @@
 /* Pie de página */
 footer {
+  font-family: "yanone";
   display: flex;
   flex-direction: column;
   align-items: center;

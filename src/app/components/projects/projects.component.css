@@ -7,9 +7,10 @@
 }
 
 .slider {
-  width: 100%;
-  height: auto;
+  width:100%;
+  height:auto;
   display: flex;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
   padding-top: 20px;
@@ -17,12 +18,12 @@
 
 .slider .project {
   text-align: center;
-  padding: 0px;
+  padding: 20px;
 }
 
 .slider .project img {
   width: 100%;
-  height: 400px;
+  height:500px;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.69));
 
 }
@@ -51,7 +52,6 @@
   display: inline-block;
   flex-wrap: wrap;
   text-align: center;
-  padding: 0px;
   margin: 15px;
 }
 
@@ -64,12 +64,13 @@
 .container2 .project img {
   width: 100%;
   overflow: hidden;
-  transition: all 500ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  padding: 10px;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.69));
 }
 
 .container2 .project img:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.69));
 }
 

@@ -9,7 +9,7 @@
 /* PAGINA DE CONTACTO */
 
 .container-info {
-  width: 90%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   margin: 0px auto;
@@ -19,7 +19,7 @@
 }
 
 .info {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,6 +72,7 @@
   margin-top: 10px;
 }
 .contact-form {
+
   width: 100%;
 }
 .form__container {
@@ -89,13 +90,13 @@
 }
 
 .form__group {
-
+  font-family: "yanone";
   position: relative;
   margin-bottom: 2.5rem;
 }
 
 .form__input {
-  font-family: "yayou";
+  font-family: "yanone";
   position: relative;
   width: 80%;
   height: 40px;
@@ -207,8 +208,11 @@
 
 
 @media (max-width: 585px) {
+  .container{
+    width: 95%;
+  }
 
-  .container {
+  .container-info {
     width: 95%;
   }
 
@@ -228,8 +232,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
   }
-
+  .h2-form{
+    text-align: center;  }
 
 }

@@ -2,7 +2,7 @@
 
 .container{
   padding: 50px;
- 
+
 }
 
 /* .container h2{
@@ -22,15 +22,15 @@
   font-family: "yayou";
   position: relative;
   width: 55%;
-  height: 20px;
+  height: 45px;
   display: block;
   border: 2px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  padding: 1rem 1.2rem;
+  border-radius: 15px;
+  font-size:15px;
+  padding: 10px 12px;
   outline: none;
   background-color: #f8efecf8;
-  line-height: 2.1rem;
+  line-height: 1;
   z-index: 1;
 }
 
