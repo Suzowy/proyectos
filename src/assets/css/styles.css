@@ -93,7 +93,7 @@ form textarea {
   z-index: 1;
 }
 */
-form button,
+/* form button,
 form input[type="submit"] {
   display: block;
   font-size: 15px;
@@ -122,7 +122,12 @@ form input[disabled] {
 
 form input[disabled]:hover {
   cursor: no-drop;
+} */
+
+.imput .file{
+  border-radius: 50px;
 }
+
 
 .formError {
   width: 100%;

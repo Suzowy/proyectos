@@ -1,3 +1,19 @@
+
+.loader {
+  border:10px solid #526f8fed;
+  border-radius: 50%;
+  border-top: 16px solid #f4d5c0;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .container1 {
   width: 90%;
   height: auto;
@@ -77,12 +93,12 @@ a:hover {
   opacity: 0.6;
 }
 
-.form__buttons{
+.form__buttons {
   width: 98%;
   margin-top: -152px;
-  padding:10px;
-  display:flex;
-  justify-content:flex-end;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .confirm {
@@ -101,7 +117,7 @@ a:hover {
   margin-bottom: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  width:80px;
+  width: 80px;
   font-weight: 800;
   height: auto;
   font-size: 20px;
@@ -133,27 +149,31 @@ a:hover {
 
 .button-edit:hover .svg,
 .button-delete:hover .svg {
-  transform: translateX(1.1em) scale(1.4);
+  transform: translateX(1.1em) scale(5);
   fill: #fff;
+  opacity: 1;
 }
 
 .button-edit:hover span,
 .button-delete:hover span {
   opacity: 0;
-  transition: 0.5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .span {
   display: block;
   margin-left: 0.3em;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .svg {
   display: block;
   transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
 
 /* pantallas más pequeñas */
 @media (max-width: 768px) {

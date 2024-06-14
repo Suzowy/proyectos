@@ -42,7 +42,6 @@ isLoggedIn: any;
   scrollToTopAndNavigate(projectId: string) {
     // Desplaza hacia arriba
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Navega al detalle del proyecto
     this.router.navigate(['/proyecto', projectId]);
   }
 

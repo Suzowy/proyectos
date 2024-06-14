@@ -20,6 +20,7 @@ export class DetailComponent implements OnInit {
   public confirm: boolean;
   public cloudinaryCloudName: string = environment.cloudinary.cloudName;
   public isLoggedIn: boolean = false;
+  public isLoading: boolean = true;
 
   constructor(
     private _projectService: ProjectService,
@@ -43,12 +44,15 @@ export class DetailComponent implements OnInit {
   }
 
   getProject(id: any) {
+    this.isLoading = true;
     this._projectService.getProject(id).subscribe(
       response => {
         this.project = response.project;
+        this.isLoading = false;
       },
       (error: any) => {
         console.log(error);
+        this.isLoading = false;
       }
     );
   }
