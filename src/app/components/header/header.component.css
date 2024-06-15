@@ -146,12 +146,12 @@ header a.actived {
   }
 
   header ul.show {
-    margin-top: 7px;
+    margin-top:24px;
     font-family: "finger";
     font-size: 11px;
     display: flex;
     flex-direction: column;
-    background-color: #4d5a62;
+    background-color: #49565c;
     height: auto;
     z-index: 9999;
   }
