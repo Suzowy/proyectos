@@ -8,14 +8,14 @@ footer {
   text-align: center;
   width: 100%;
   height: auto;
-  background: #7c8c9b;
+  background: #4d5a62;
   padding-top: 50px;
   padding-bottom: 30px;
   overflow: hidden;
 }
 
 footer h2{
-color: #fef7ef;
+color: #d0c8c1;
 font-weight: lighter;
 font-size: 15px;
 }
@@ -110,5 +110,5 @@ font-size: 15px;
 
 .creditos a{
   text-decoration: none;
-  color: #37404fd6;
+  color: #d0c8c1;
 }
