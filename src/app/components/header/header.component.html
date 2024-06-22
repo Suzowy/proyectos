@@ -1,31 +1,33 @@
 <header>
   <input type="checkbox" id="checkbox">
   <label for="checkbox" class="menu-toggle">
-      <div class="bars" id="bar1"></div>
-      <div class="bars" id="bar2"></div>
-      <div class="bars" id="bar3"></div>
+    <div class="bars" id="bar1"></div>
+    <div class="bars" id="bar2"></div>
+    <div class="bars" id="bar3"></div>
   </label>
-  <!-- <button class="menu-toggle" aria-label="Toggle Menu">
-    <span>menu</span>
-  </button> -->
+  <nav>
   <ul>
     <li><a href="#about">Sobre mí</a></li>
     <li><a href="#projects">Proyectos</a></li>
     <li class="logo"><a href="#content">SC</a></li>
-     <li><a href="#contact" >Contacto</a></li>
+    <li><a href="#contact">Contacto</a></li>
 
-     <li *ngIf="isLoggedIn">
+    <li *ngIf="isLoggedIn">
       <a (click)="scrollAndNavigate('/crear-proyecto')" [routerLink]="['/crear-proyecto']"
-        [routerLinkActive]="['actived']">Crear proyecto</a></li>
+        [routerLinkActive]="['actived']">Crear proyecto</a>
+    </li>
 
-       <li *ngIf="!isLoggedIn && !username">
-  <a (click)="scrollToTopAndNavigate('/login')" [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a>
-</li>
-<li *ngIf="isLoggedIn">
-  <span>Bienvenida, {{ username }}</span>
-</li>
-<li *ngIf="isLoggedIn">
-  <a (click)="logout()">Salir</a>
-</li>
+    <li *ngIf="!isLoggedIn && !username">
+      <a (click)="scrollToTopAndNavigate('/login')" [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a>
+    </li>
+
+    <li *ngIf="isLoggedIn">
+      <span>Bienvenida, {{ username }}</span>
+    </li>
+
+    <li *ngIf="isLoggedIn">
+      <a (click)="logout()">Salir</a>
+    </li>
   </ul>
+</nav>
 </header>
