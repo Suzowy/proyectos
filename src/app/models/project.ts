@@ -2,6 +2,7 @@ export class Project{
   static _id: string;
 id: any|string;
 http: any;
+createdAt: string | number | Date | undefined;
 	constructor(
 		public _id: string,
 		public name: string,
