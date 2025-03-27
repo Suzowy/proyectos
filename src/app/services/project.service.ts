@@ -25,9 +25,10 @@ export class ProjectService {
     return this._http.post(`${this.url}/save-project`, params, { headers: headers });
   }
 
-  getProjects():Observable<any> {
+  getProjects(): Observable<any> {
+    const timestamp = new Date().getTime();
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.get(`${this.url}/projects`, { headers: headers });
+    return this._http.get(`${this.url}/projects?nocache=${timestamp}`, { headers: headers });
   }
 
 

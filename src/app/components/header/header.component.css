@@ -24,28 +24,28 @@
 
 #checkbox:checked + .menu-toggle .bars {
   position: absolute;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .menu-toggle #bar2 {
   transform: scaleX(0);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .menu-toggle #bar1 {
   width: 100%;
   transform: rotate(45deg);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .menu-toggle #bar3 {
   width: 100%;
   transform: rotate(-45deg);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .menu-toggle {
-  transition-duration: .5s;
+  transition-duration: 0.5s;
   transform: rotate(180deg);
 }
 
@@ -126,7 +126,7 @@ header a.actived {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transition-duration: 0.5s;
+    transition-duration: 0.1s;
     z-index: 10001;
   }
 
@@ -148,10 +148,10 @@ header a.actived {
     right: 0;
     width: 50%;
     height: 100%;
-    background-color:#49565cf0;
+    background-color:#49565cfc;
     opacity: 0;
     transform: translateX(100%);
-    transition: transform 2s ease, opacity 1.5s ease;
+    transition: transform 1.5s ease, opacity 1.2s ease;
     z-index: 10000;
   }
 
@@ -162,9 +162,9 @@ header a.actived {
   }
 
   header ul li {
-    font-size: 15px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 5px;
     line-height: 4;
   }
 

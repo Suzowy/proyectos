@@ -1,20 +1,16 @@
-
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private username: string | null = null;
-  checkLoginStatus: any;
-  setLoggedIn: any;
 
   constructor() {
-    // Verificar si localStorage está disponible
     if (typeof localStorage !== 'undefined') {
-      // Verificar si hay un usuario autenticado al cargar el servicio
       const storedLoggedIn = localStorage.getItem('isLoggedIn');
       if (storedLoggedIn === 'true') {
         this.loggedIn.next(true);
@@ -27,11 +23,8 @@ export class AuthService {
     if (username === environment.authCredentials.username && password === environment.authCredentials.password) {
       this.loggedIn.next(true);
       this.username = username;
-
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('username', username);
-      }
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('username', username);
       return true;
     }
     return false;
@@ -40,10 +33,8 @@ export class AuthService {
   logout(): void {
     this.loggedIn.next(false);
     this.username = null;
-    if (typeof localStorage !== 'undefined') {
-      localStorage.removeItem('isLoggedIn');
-      localStorage.removeItem('username');
-    }
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
   }
 
   isLoggedIn(): BehaviorSubject<boolean> {
@@ -52,5 +43,17 @@ export class AuthService {
 
   getUsername(): string | null {
     return this.username;
+  }
+
+  checkLoginStatus(): boolean {
+    return this.loggedIn.value;
+  }
+
+  setLoggedIn(status: boolean): void {
+    this.loggedIn.next(status);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('isLoggedIn', status ? 'true' : 'false');
+      if (!status) localStorage.removeItem('username');
+    }
   }
 }
