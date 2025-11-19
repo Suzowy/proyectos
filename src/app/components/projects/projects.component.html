@@ -25,7 +25,10 @@
           <img [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
             *ngIf="project.image" alt="img" (error)="onImageError($event)">
         </div>
-        <h3>{{project.name}}</h3>
+        <div class="nombre">
+          <h3>{{project.name}}</h3>
+        </div>
+
         <!-- <p>{{project.category}}</p> -->
       </a>
     </li>
@@ -38,110 +41,124 @@
 <div class="container3">
   <h2>Tecnologías utilizadas</h2>
 
-  <ul>
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/mongodb-wordmark.svg" alt="logo">
-      </div>
-    </li>
+  <!-- Lenguajes de programación -->
+  <div class="section">
+    <h3>Lenguajes de programación</h3>
+    <ul>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/javascript.svg" alt="JavaScript">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/typescript.svg" alt="TypeScript">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/php.svg" alt="PHP">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/mysql.svg" alt="MySQL">
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/canva.svg" alt="logo">
-      </div>
-    </li>
+  <!-- Tecnologías backend -->
+  <div class="section">
+    <h3>Tecnologías backend</h3>
+    <ul>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/mongodb-wordmark.svg" alt="MongoDB">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/nodejs.svg" alt="Node.js">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/php.svg" alt="PHP">
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/angular.svg" alt="logo">
-      </div>
-    </li>
+  <!-- Tecnologías frontend -->
+  <div class="section">
+    <h3>Tecnologías frontend</h3>
+    <ul>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/html5.svg" alt="HTML5">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/css.svg" alt="CSS">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/bootstrap.svg" alt="Bootstrap">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/angular.svg" alt="Angular">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/react.svg" alt="React">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/sass.svg" alt="Sass">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/jquery.svg" alt="jQuery">
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/css.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/html5.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/nodejs.svg" alt="logo">
-      </div>
-    </li>
-
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/javascript.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/typescript.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/bootstrap.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/cloudinary.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/jquery.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/mysql.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/php.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/postman.svg" alt="logo">
-      </div>
-    </li>
-
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/react.svg" alt="logo">
-      </div>
-    </li>
-
-    <li class="tecno">
-      <div class="log">
-        <img src="assets/img/sass.svg" alt="logo">
-      </div>
-    </li>
-  </ul>
+  <!-- Herramientas de desarrollo -->
+  <div class="section">
+    <h3>Herramientas de desarrollo</h3>
+    <ul>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/canva.svg" alt="Canva">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/cloudinary.svg" alt="Cloudinary">
+        </div>
+      </li>
+      <li class="tecno">
+        <div class="log">
+          <img src="assets/img/postman.svg" alt="Postman">
+        </div>
+      </li>
+    </ul>
+  </div>
 
 </div>
 
+
 <div class="container4">
-  <h2>Formación</h2>
+  <h2>Certificados</h2>
 
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
@@ -151,7 +168,7 @@
           Upgrade Hub
         </button>
       </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body">
           <div class="certificado">
             <img src="assets/img/2024-05-30 20 27 48.jpg" alt="Imagen de proyecto">
