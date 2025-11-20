@@ -6,10 +6,13 @@
   margin-bottom: 20px;
 }
 
+.container ul {
+  padding-left: 0rem !important;
+}
+
 .container h2 {
   position: relative;
-  width: 80%;
-  left: 10%;
+  width: 100%;
   border-bottom: 1px solid #c0bebe;
 }
 
@@ -25,44 +28,78 @@
   width: 100%;
   height: auto;
   border-radius: 5px;
-  /* background: url(/assets/img/fondo-proyecto.jpg); */
-  /* background-position: top; */
   position: relative;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.091);
   overflow: hidden;
   display: inline-flex;
   text-align: center;
   margin: 10px;
   flex-direction: row;
   flex-wrap: wrap;
-  /* align-content: center; */
-  /* justify-content: center; */
-  /* align-items: center; */
+  box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.25);
+  /* solo abajo y laterales */
+}
+
+.container2 .project {
+  transition: all 300ms ease-in-out;
 }
 
 .container2 .project:hover {
-  border-color: #fed7be;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  border-color: #ffffff;
+  transform: scale(1.01);
+  background: linear-gradient(to bottom, rgba(252, 252, 252, 0.149), rgba(78, 78, 78, 0.453));
+
+}
+
+
+.container2 .image {
+  width: 50%;
 }
 
 .container2 .project img {
-      width: 60%;
-      height: auto;
-    overflow: hidden;
-    display: flex;
-    transition: all 300ms ease-in-out;
-    padding: 10px;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.437));
-    flex-direction: row;
-    align-content: center;
-    justify-content: flex-start;
-    align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  padding: 10px;
+  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.437));
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.container2 .project img:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0px -2px 12px rgba(0, 0, 0, 0.69));
+
+.project a {
+  text-decoration: none;
+  display: flex;
+  color: black;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+.project .nombre {
+  width: 50%;
+  background-color: #49565c;
+  text-align: center;
+  font-size: 10px;
+
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.5s ease-out;
+}
+
+.project .nombre h3 {
+  color: #dbd4ce;
+}
+
+/* El hover ahora detecta TODO el contenedor .project */
+.project:hover .nombre,
+.project:hover a .nombre {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 .container3 {
   width: 100%;
@@ -77,8 +114,7 @@
 .container3 h2,
 .container4 h2 {
   position: relative;
-  width: 80%;
-  left: 10%;
+  width: 100%;
   border-bottom: 1px solid #c0bebe;
 }
 
@@ -114,22 +150,25 @@
 }
 
 .accordion-item {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
+  margin-top: 20px;
   color: var(--bs-accordion-color);
   background-color: #ffffff00;
   border: none;
 }
 
-.accordion-header button{
+.accordion-header button {
   background-color: #ffffff00;
 }
+
 .accordion img {
   display: flex;
   margin: 0 auto;
-  width: 50%;
+  width: 30%;
   height: auto;
 }
+
 
 h3 {
   line-height: 1.8;
@@ -160,32 +199,11 @@ p {
   opacity: 0;
 }
 
-.project img {
-  width: 30%;
-  height: auto;
-  overflow: hidden;
-}
 
-.project a {
-    text-decoration: none;
-    display: flex;
-    color: black;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-.project .nombre{
-width: 50%;
-background-color: #fed7be;
-}
-
-.accordion-item{
-  width: 80%;
-}
 
 @media (max-width: 1139px) {
   .container2 .project {
-    width: 30%;
+    width: 100%;
     height: auto;
   }
 
@@ -196,36 +214,24 @@ background-color: #fed7be;
 
 @media (max-width: 768px) {
   .container2 .project {
-    width: 90%;
-    height: auto;
-    margin: 10px;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
   }
 
-  /* .slider {
-    height: auto;
-  }
-
-  .slider .project img {
-    height: 250px;;
-  } */
 }
 
 @media (max-width: 480px) {
+
   .container,
   .container2,
   .container3,
   .container4 {
-    width: 97%;
+    width: 100%;
   }
-  /*
-  .container2 .project {
-    width:100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 0px;
-  } */
+
+
+  .container .nombre h3 {
+    font-size: 10px;
+  }
 
   .container3 .tecno {
     width: 40px;
@@ -233,20 +239,18 @@ background-color: #fed7be;
     margin: 5px;
   }
 
-  /* .slider {
-    width: 90%;
-    height: 300px;
-    padding: 0px;
-  } */
-
   .container2 .project {
     width: 100%;
-    margin-left: -16px;
+    margin-left: 0px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
   .accordion-item {
     width: 100%;
+  }
+
+  .accordion img {
+    width: 60%;
   }
 }

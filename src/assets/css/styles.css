@@ -41,9 +41,9 @@ body {
   width: 80%;
   max-width: 1200px;
   margin: 0px auto;
-  box-shadow: 0 0 40px black;
-  border-left: 1px solid #b7b7b7;
-  border-right: 1px solid #b7b7b7;
+  box-shadow: 0 0 12px rgba(173, 173, 173, 0.74);
+  border-left: 1px solid #dadada;
+  border-right: 1px solid #dadada;
   background: #ffffffea;
   padding-top: 120px;
   overflow: hidden;
@@ -60,73 +60,9 @@ h2 {
   padding-bottom: 10px;
 }
 
-/* Formularios generales para todas las páginas */
-/* form {
-  width: 80%;
-  margin: 0 auto;
-  font-size: 15px;
-}
-
-form label {
-  color: #686868;
-  display: block;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="number"],
-form input[type="email"],
-form textarea {
-  width: 40%;
-  height: 20px;
-  border: 2px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 15px;
-  padding: 1rem 1.2rem;
-  outline: none;
-  background-color: #f5eeeb;
-  color: #686868;
-  line-height: 1.1rem;
-  z-index: 1;
-}
-*/
-/* form button,
-form input[type="submit"] {
-  display: block;
-  font-size: 15px;
-  padding: 10px;
-  margin-top: 15px;
-  color: whitesmoke;
-  background: #8560d8;
-
-  border: 2px solid #422580;
-  box-shadow: inset 0px 0px 5px 1px #422580;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-form button:hover,
-form input[type="submit"]:hover {
-  background: #321b62;
-  border: 2px solid #8560d8;
-  box-shadow: inset 0px 0px 5px 3px #7d58cb;
-  color: whitesmoke;
-}
-
-form input[disabled] {
-  opacity: 0.6;
-}
-
-form input[disabled]:hover {
-  cursor: no-drop;
-} */
-
 .imput .file{
   border-radius: 50px;
 }
-
 
 .formError {
   width: 100%;

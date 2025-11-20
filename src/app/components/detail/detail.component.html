@@ -2,56 +2,57 @@
   <h2>Detalle del proyecto</h2>
 
 
-  <div class="container" *ngIf="isLoading">
-
-    <div class="container-loader">
-      <span class="loader"></span>
-    </div>
-  </div>
-
-
-  <div class="container" *ngIf="!isLoading && project">
-    <div class="image">
-      <img
-        [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
-        *ngIf="project.image"
-        alt="img"
-        (error)="onImageError($event)">
+<div class="container" *ngIf="isLoading">
+  <div class="container-loader">
+    <div class="loader-bar" [style.width.%]="progress">
+      <span class="loader-text">{{progress}}%</span>
     </div>
   </div>
 </div>
 
 
-  <div class="data"  *ngIf="project">
-    <h2>{{ project.name }}</h2>
-    <h4>{{ project.description }}</h4>
-    <p>categoría: {{ project.category }}</p>
-    <p>Tecnologías utilizadas: {{ project.langs }}</p>
-    <p>Año: {{ project.year }}</p>
-    <a href="{{ project.http }}" target="_blank">
-      Click para ver el proyecto.
-    </a><br>
-    <a [routerLink]="['/proyectos']">
-      Volver a proyectos
-    </a>
-  </div>
 
-  <div class="form__buttons">
-    <p *ngIf="isLoggedIn && !confirm">
-      <a *ngIf="project" [routerLink]="['/editar-proyecto', project._id]" class="button-edit">
-        <svg class="svg" viewBox="0 0 16 16">
-          <path
-            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
-        </svg><span>Editar</span></a>
-      <a (click)="setConfirm(true)" class="button-delete"><svg class="svg" viewBox="0 0 16 16">
-         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-        </svg><span>Borrar</span></a>
-    </p>
-
-    <p *ngIf="confirm == true">
-      <span class="confirm">¿Estas seguro de eliminar este proyecto?</span>
-      <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
-      <a (click)="deleteProject(project._id)" class="button-delete">Eliminar</a>
-    </p>
+  <div class="container" *ngIf="!isLoading && project">
+    <div class="image">
+      <img [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
+        *ngIf="project.image" alt="img" (error)="onImageError($event)">
+    </div>
   </div>
+</div>
+
+
+<div class="data" *ngIf="project">
+  <h2>{{ project.name }}</h2>
+  <h4>{{ project.description }}</h4>
+  <p>categoría: {{ project.category }}</p>
+  <p>Tecnologías utilizadas: {{ project.langs }}</p>
+  <p>Año: {{ project.year }}</p>
+  <a href="{{ project.http }}" target="_blank">
+    Click para ver el proyecto.
+  </a><br>
+  <a [routerLink]="['/proyectos']">
+    Volver a proyectos
+  </a>
+</div>
+
+<div class="form__buttons">
+  <p *ngIf="isLoggedIn && !confirm">
+    <a *ngIf="project" [routerLink]="['/editar-proyecto', project._id]" class="button-edit">
+      <svg class="svg" viewBox="0 0 16 16">
+        <path
+          d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+      </svg><span>Editar</span></a>
+    <a (click)="setConfirm(true)" class="button-delete"><svg class="svg" viewBox="0 0 16 16">
+        <path
+          d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+        <path
+          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+      </svg><span>Borrar</span></a>
+  </p>
+
+  <p *ngIf="confirm == true">
+    <span class="confirm">¿Estas seguro de eliminar este proyecto?</span>
+    <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+    <a (click)="deleteProject(project._id)" class="button-delete">Eliminar</a>
+  </p>
+</div>

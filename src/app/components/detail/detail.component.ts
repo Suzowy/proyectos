@@ -21,6 +21,8 @@ export class DetailComponent implements OnInit {
   public cloudinaryCloudName: string = environment.cloudinary.cloudName;
   public isLoggedIn: boolean = false;
   public isLoading: boolean = true;
+  public progress: number = 0; // porcentaje del loader
+
 
   constructor(
     private _projectService: ProjectService,
@@ -44,18 +46,56 @@ export class DetailComponent implements OnInit {
   }
 
   getProject(id: any) {
-    this.isLoading = true;
-    this._projectService.getProject(id).subscribe(
-      response => {
-        this.project = response.project;
+  this.isLoading = true;
+  this.progress = 0;
+
+  this._projectService.getProject(id).subscribe(
+    response => {
+      this.project = response.project;
+
+      // Simular carga de barra hasta 100% mientras se carga la imagen
+      this.simulateProgress(() => {
         this.isLoading = false;
-      },
-      (error: any) => {
-        console.log(error);
-        this.isLoading = false;
-      }
-    );
+      });
+    },
+    (error: any) => {
+      console.log(error);
+      this.isLoading = false;
+    }
+  );
+}
+
+simulateProgress(callback: () => void) {
+  const interval = setInterval(() => {
+    if (this.progress >= 90) {
+      clearInterval(interval);
+    } else {
+      this.progress++;
+    }
+  }, 20);
+
+  // Se asegura que cuando la imagen termine de cargar, llegue a 100%
+  if (this.project && this.project.image) {
+    const img = new Image();
+    img.src = `https://res.cloudinary.com/${this.cloudinaryCloudName}/image/upload/proyectos/${this.project.image}`;
+    img.onload = () => {
+      clearInterval(interval);
+      this.progress = 100;
+      setTimeout(() => callback(), 300); // espera un poco antes de ocultar loader
+    };
+    img.onerror = () => {
+      clearInterval(interval);
+      this.progress = 100;
+      callback();
+    };
+  } else {
+    // Si no hay imagen, termina de cargar inmediatamente
+    this.progress = 100;
+    callback();
   }
+}
+
+
 
   onImageError(event: Event) {
     const target = event.target as HTMLImageElement;
