@@ -2,13 +2,15 @@
   <h2>Detalle del proyecto</h2>
 
 
-<div class="container" *ngIf="isLoading">
-  <div class="container-loader">
-    <div class="loader-bar" [style.width.%]="progress">
-      <span class="loader-text">{{progress}}%</span>
-    </div>
+<!-- Loader -->
+<div class="loader-container" *ngIf="isLoading">
+  <div class="spinner"></div>
+  <div class="loader-bar-container">
+    <div class="loader-bar" [style.width.%]="progress"></div>
+    <span class="loader-text">{{ progress }}% - Cargando detalle...</span>
   </div>
 </div>
+
 
 
 

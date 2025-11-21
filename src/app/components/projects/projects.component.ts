@@ -1,12 +1,9 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef, OnDestroy } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
 import { environment } from '../../../environments/environment';
-import { Router } from '@angular/router'; // Import Router
-
-
-declare var $: any;
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -14,17 +11,17 @@ declare var $: any;
   styleUrls: ['./projects.component.css'],
   providers: [ProjectService]
 })
-export class ProjectsComponent implements OnInit, AfterViewChecked {
+export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
+
   public projects: Project[] = [];
   public url: string;
-  public showAllProjects: boolean = false;
-  public projectsLoaded: boolean = false;
   public cloudinaryCloudName: string = environment.cloudinary.cloudName;
 
-  constructor(
-    private _projectService: ProjectService,
-    private router: Router // Inject Router
-  ) {
+  @ViewChildren('nombre', { read: ElementRef }) nombreEls!: QueryList<ElementRef>;
+
+  private observer: IntersectionObserver | null = null;
+
+  constructor(private _projectService: ProjectService, private router: Router) {
     this.url = Global.url;
   }
 
@@ -32,25 +29,40 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
     this.getProjects();
   }
 
-  ngAfterViewChecked() {
-    if (!this.projectsLoaded) {
-      $('.galeria').bxSlider({
-        adaptiveHeight: true,
-        auto: true,
-        // autoControls: true,
-        // stopAutoOnClick: true,
-        // pager: true,
-        controls: false,
-        touchEnabled: true,
-        slideWidth: 800,
-        responsive: true,
-        pause: 5000,
-        speed: 2000,
+  ngAfterViewInit() {
+    this.nombreEls.changes.subscribe(() => {
+      this.setupObserver();
+    });
+    this.setupObserver();
+  }
 
-        easing: "ease-in-out"
-      });
-      this.projectsLoaded = true;
+  ngOnDestroy() {
+    if (this.observer) {
+      this.observer.disconnect();
+      this.observer = null;
     }
+  }
+
+  private setupObserver() {
+    if (this.observer) {
+      this.observer.disconnect();
+      this.observer = null;
+    }
+
+    const elements = this.nombreEls.toArray().map(el => el.nativeElement);
+    if (!elements || elements.length === 0) return;
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const target = entry.target as HTMLElement;
+        if (entry.isIntersecting || entry.intersectionRatio > 0.05) {
+          target.classList.add('visible');
+          this.observer?.unobserve(target); // solo una vez
+        }
+      });
+    }, { threshold: 0.05 }); // menor threshold para móviles
+
+    elements.forEach(el => this.observer?.observe(el));
   }
 
   onImageError(event: Event) {
@@ -60,19 +72,12 @@ export class ProjectsComponent implements OnInit, AfterViewChecked {
 
   getProjects() {
     this._projectService.getProjects().subscribe(
-      response => {
-        if (response.projects) {
-          this.projects = response.projects;
-        }
-      },
-      error => {
-        console.log(error);
-      }
+      response => { if (response.projects) this.projects = response.projects; },
+      error => console.log(error)
     );
   }
 
-  scrollToTopAndNavigate(projectId: string): void {
-    console.log(`Navigating to project with ID: ${projectId}`); // Log ID
+  scrollToTopAndNavigate(projectId: string) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.router.navigate(['/proyecto/', projectId]);
   }
