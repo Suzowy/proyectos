@@ -24,8 +24,16 @@
 
 
     <div class="form__group">
-      <textarea class="form__input" name="description" #description="ngModel" [(ngModel)]="project.description" required
-        placeholder="Descripción"></textarea>
+    <textarea class="form__input"
+          name="description"
+          #description="ngModel"
+          [(ngModel)]="project.description"
+          required
+          placeholder="Descripción"
+          (input)="autoGrow($event)">
+</textarea>
+
+
       <label class="form__label" for="description">Descripción</label>
       <span class="formError" *ngIf="description.touched && !description.valid">La descripción es obligatoria</span>
     </div>

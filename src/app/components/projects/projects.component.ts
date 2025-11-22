@@ -36,6 +36,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.setupObserver();
   }
 
+  
+
   ngOnDestroy() {
     if (this.observer) {
       this.observer.disconnect();
@@ -43,27 +45,30 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  private setupObserver() {
-    if (this.observer) {
-      this.observer.disconnect();
-      this.observer = null;
-    }
-
-    const elements = this.nombreEls.toArray().map(el => el.nativeElement);
-    if (!elements || elements.length === 0) return;
-
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const target = entry.target as HTMLElement;
-        if (entry.isIntersecting || entry.intersectionRatio > 0.05) {
-          target.classList.add('visible');
-          this.observer?.unobserve(target); // solo una vez
-        }
-      });
-    }, { threshold: 0.05 }); // menor threshold para móviles
-
-    elements.forEach(el => this.observer?.observe(el));
+ private setupObserver() {
+  if (this.observer) {
+    this.observer.disconnect();
+    this.observer = null;
   }
+
+  const elements = this.nombreEls.toArray().map(el => el.nativeElement);
+  if (!elements || elements.length === 0) return;
+
+  this.observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const target = entry.target as HTMLElement;
+      if (entry.isIntersecting) {
+        target.classList.add('visible');
+      } else {
+        target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1 }); // umbral un poco mayor para detectar bien
+
+
+  elements.forEach(el => this.observer?.observe(el));
+}
+
 
   onImageError(event: Event) {
     const target = event.target as HTMLImageElement;

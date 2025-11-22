@@ -34,6 +34,13 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
+  autoGrow(event: any) {
+    const textarea = event.target;
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+  }
+
+
   onSubmit(form: any) {
     if (this._authService.isLoggedIn()) {
       this._projectService.saveProject(this.project).subscribe(

@@ -152,6 +152,15 @@
   transform: translateY(-2px);
 }
 
+.description-text {
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+
+
+
+
 /* BOTONES DE EDICIÓN Y ELIMINACIÓN */
 /* CONTENEDOR DE BOTONES */
 .form__buttons {
@@ -168,7 +177,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   padding: 10px 15px;
   font-size: 16px;
   font-weight: 500;
@@ -199,6 +207,10 @@
   transform: translateY(-2px);
 }
 
+.form__buttons .button-edit{
+margin:10px;
+}
+
 .confirm {
   display: inline-block;
   font-size: 14px;
@@ -227,11 +239,10 @@
   .data {
     width: 95%;
     padding: 20px;
-    text-align: center;
   }
 
   .data a {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .form__buttons {
@@ -241,7 +252,6 @@
 
   .button-edit,
   .button-delete {
-    width:50%;
     min-width: unset;
   }
 }
@@ -263,7 +273,5 @@
     font-size: 14px;
   }
 
-  .data a {
-    font-size: 14px;
-  }
+
 }
