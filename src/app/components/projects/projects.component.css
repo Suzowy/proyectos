@@ -11,6 +11,15 @@
   margin-bottom: 30px;
 }
 
+.category-title {
+  margin-top: 40px;
+  font-size: 1.8rem;
+  color: #49565c;
+  border-bottom: 2px solid #c0bebe;
+  padding-bottom: 10px;
+}
+
+
 .container2 ul {
   list-style: none;
   padding: 0;

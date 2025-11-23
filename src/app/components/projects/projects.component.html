@@ -1,25 +1,25 @@
 <div class="container2">
   <h2>Mis proyectos</h2>
 
-  <ul>
-    <li *ngFor="let project of projects" class="project">
-      <a (click)="scrollToTopAndNavigate(project._id)" [routerLink]="['/proyecto/', project._id]">
-        <div class="image">
-          <img [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
-            *ngIf="project.image" alt="img" (error)="onImageError($event)">
-        </div>
-        <div class="nombre" #nombre>
-          <h3>{{ project.name }}</h3>
-        </div>
+  <ng-container *ngFor="let group of projects | groupByCategory">
+    <!-- Título de la categoría -->
+    <h3 class="category-title">{{ group.category }}</h3>
 
-        <!-- <p>{{project.category}}</p> -->
-      </a>
-    </li>
-  </ul>
-
-
+    <ul>
+      <li *ngFor="let project of group.items" class="project">
+        <a (click)="scrollToTopAndNavigate(project._id)" [routerLink]="['/proyecto/', project._id]">
+          <div class="image">
+            <img [src]="'https://res.cloudinary.com/' + cloudinaryCloudName + '/image/upload/proyectos/' + project.image"
+              *ngIf="project.image" alt="img" (error)="onImageError($event)">
+          </div>
+          <div class="nombre" #nombre>
+            <h3>{{ project.name }}</h3>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </ng-container>
 </div>
-
 
 <div class="container3">
   <h2>Tecnologías utilizadas</h2>
@@ -46,41 +46,42 @@
         </div>
         <span class="tecno-name">PHP</span>
       </li>
+    </ul>
+  </div>
+
+  <!-- Infraestructura / Base de datos -->
+  <div class="section">
+    <h3>Bases de datos</h3>
+    <ul>
       <li class="tecno">
         <div class="log">
           <img src="assets/img/mysql.svg" alt="MySQL">
         </div>
         <span class="tecno-name">MySQL</span>
       </li>
-    </ul>
-  </div>
-
-  <!-- Tecnologías backend -->
-  <div class="section">
-    <h3>Tecnologías backend</h3>
-    <ul>
       <li class="tecno">
         <div class="log">
           <img src="assets/img/mongodb-wordmark.svg" alt="MongoDB">
         </div>
         <span class="tecno-name">MongoDB</span>
       </li>
+    </ul>
+  </div>
+
+  <!-- Tecnologías Backend -->
+  <div class="section">
+    <h3>Tecnologías backend</h3>
+    <ul>
       <li class="tecno">
         <div class="log">
           <img src="assets/img/nodejs.svg" alt="Node.js">
         </div>
         <span class="tecno-name">Node.js</span>
       </li>
-      <li class="tecno">
-        <div class="log">
-          <img src="assets/img/php.svg" alt="PHP">
-        </div>
-        <span class="tecno-name">PHP</span>
-      </li>
     </ul>
   </div>
 
-  <!-- Tecnologías frontend -->
+  <!-- Tecnologías Frontend -->
   <div class="section">
     <h3>Tecnologías frontend</h3>
     <ul>
@@ -129,6 +130,7 @@
     </ul>
   </div>
 </div>
+
 
 
 

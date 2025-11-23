@@ -19,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TitleComponent } from './components/title/title.component';
 
 import { HeaderComponent } from './components/header/header.component';
+import { GroupByCategoryPipe } from './pipes/group-by-category.pipe';
 
 
 
@@ -34,7 +35,8 @@ import { HeaderComponent } from './components/header/header.component';
     EditComponent,
     FooterComponent,
     TitleComponent,
-    HeaderComponent
+    HeaderComponent,
+    GroupByCategoryPipe
 
   ],
   imports: [

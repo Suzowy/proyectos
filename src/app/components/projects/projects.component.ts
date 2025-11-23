@@ -36,7 +36,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.setupObserver();
   }
 
-  
+
 
   ngOnDestroy() {
     if (this.observer) {
@@ -44,15 +44,13 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
       this.observer = null;
     }
   }
-
- private setupObserver() {
+private setupObserver() {
   if (this.observer) {
     this.observer.disconnect();
-    this.observer = null;
   }
 
   const elements = this.nombreEls.toArray().map(el => el.nativeElement);
-  if (!elements || elements.length === 0) return;
+  if (!elements.length) return;
 
   this.observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -63,10 +61,20 @@ export class ProjectsComponent implements OnInit, AfterViewInit, OnDestroy {
         target.classList.remove('visible');
       }
     });
-  }, { threshold: 0.1 }); // umbral un poco mayor para detectar bien
+  }, {
+    threshold: 0.05,
+    rootMargin: '0px 0px -10% 0px' // margen para activar un poco antes si quieres
+  });
 
+  elements.forEach(el => {
+    this.observer?.observe(el);
 
-  elements.forEach(el => this.observer?.observe(el));
+    // Aquí «precargamos» la clase visible si ya está en el viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+    }
+  });
 }
 
 
